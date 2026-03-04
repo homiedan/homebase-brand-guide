@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homebase Brand Guidelines 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Druk';
+      src: url('Druk-Bold-Web.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7E10D4;
+      --deep:   #1E0B3A;
+      --white:  #FFFFFF;
+      --grey01: #FBFBFB;
+      --rain:   #D5C7FF;
+      --yellow: #E0FF00;
+      --pink:   #E55CCD;
+      --nav-w:  240px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #F5F0FC;
+      color: var(--deep);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* ─── SIDEBAR ─────────────────────────────────────────────── */
+    .sidebar {
+      width: var(--nav-w);
+      flex-shrink: 0;
+      background: var(--grey01);
+      position: fixed;
+      top: 0; left: 0; bottom: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 32px 0 40px;
+      z-index: 100;
+    }
+
+    .sidebar::-webkit-scrollbar { width: 3px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(126,16,212,0.2); border-radius: 4px; }
+
+    .sb-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 0 28px 32px;
+    }
+
+    .sb-logo {
+      height: 16px;
+      width: auto;
+      color: var(--purple);
+    }
+
+    .sb-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--deep);
+      line-height: 1.2;
+      letter-spacing: 0.1px;
+    }
+
+    .sb-section-label {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(30,11,58,0.3);
+      padding: 16px 28px 6px;
+    }
+
+    .sb-link {
+      display: block;
+      padding: 8px 28px;
+      color: rgba(30,11,58,0.55);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.15s;
+      border-left: 3px solid transparent;
+      line-height: 1.3;
+    }
+
+    .sb-link:hover { color: var(--deep); border-left-color: rgba(126,16,212,0.3); }
+    .sb-link.active { color: var(--deep); border-left-color: var(--purple); background: rgba(126,16,212,0.12); }
+
+    /* ─── MAIN ─────────────────────────────────────────────────── */
+    main { margin-left: var(--nav-w); flex: 1; min-width: 0; }
+
+    /* ─── SECTION BASE ─────────────────────────────────────────── */
+    .section {
+      padding: 80px 72px;
+      background: var(--white);
+      border-bottom: 1px solid #EAE0F8;
+    }
+
+    .section.alt { background: var(--white); }
+    .section.dark { background: var(--deep); }
+
+    .s-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--deep);
+      margin-bottom: 28px;
+    }
+
+    .section.dark .s-title { color: white; }
+
+    .s-lead {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: rgba(30,11,58,0.65);
+      max-width: 600px;
+      margin-bottom: 52px;
+    }
+
+    /* Text-only elements: capped at 600px */
+    .section > .s-title,
+    .section > .s-lead,
+    .section > p,
+    .section > .swatch-label,
+    .section > .do-dont,
+    .section > .grid-2 {
+      max-width: 600px;
+    }
+    /* Card grids, visual examples, image galleries: full width — no constraint */
+
+    .section.dark .s-lead { color: rgba(255,255,255,0.6); }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    #cover {
+      padding: 100px 72px 96px;
+      background: url('bg-img.jpg') center/cover no-repeat;
+      background-color: var(--deep);
+      border-bottom: none;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 520px;
+    }
+
+
+    .cover-logo {
+      display: block;
+      align-self: flex-start;
+      height: 28px;
+      width: auto;
+      color: white;
+      margin-bottom: auto;
+    }
+
+    .cover-body {
+      margin-top: 72px;
+    }
+
+    .cover-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .cover-version {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: white;
+      letter-spacing: 0.3px;
+    }
+
+    /* ─── GRIDS ─────────────────────────────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+
+    /* ─── CONTENT BLOCK ────────────────────────────────────────── */
+    .cb h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+
+    .cb p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.7;
+      color: rgba(30,11,58,0.62);
+    }
+
+    /* ─── PAGES GALLERY ─────────────────────────────────────────── */
+    .pages {
+      display: grid;
+      gap: 16px;
+      margin-top: 52px;
+    }
+
+    .pages.p1 { grid-template-columns: 1fr; }
+    .pages.p2 { grid-template-columns: 1fr 1fr; }
+    .pages.p3 { grid-template-columns: 1fr 1fr 1fr; }
+    .pages.p4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+    .pages img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(30,11,58,0.12);
+      display: block;
+    }
+
+    /* ─── PRINCIPLES ────────────────────────────────────────────── */
+    .principle-card {
+      background: var(--grey01);
+      border: 1.5px solid #EAE0F8;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .pc-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+
+    .pc-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      letter-spacing: -0.02em;
+      color: var(--deep);
+      margin-bottom: 12px;
+    }
+
+    .pc-desc {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: rgba(30,11,58,0.6);
+    }
+
+    /* ─── LOGO COMBOS ────────────────────────────────────────────── */
+    .logo-combo-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #EAE0F8;
+    }
+
+    .logo-combo-box {
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 90px;
+    }
+
+    .logo-combo-box--square {
+      padding: 0;
+      aspect-ratio: 1 / 1;
+      min-height: unset;
+    }
+
+    .logo-combo-box svg { width: 100%; max-width: 160px; height: auto; display: block; }
+
+    .logo-combo-caption {
+      background: white;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(30,11,58,0.45);
+      text-align: center;
+    }
+
+    /* ─── DO / DON'T ────────────────────────────────────────────── */
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+
+    .dd-head {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .dd-do { color: #22C55E; }
+    .dd-dont { color: #EF4444; }
+
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .rule-list li {
+      display: flex;
+      gap: 11px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: rgba(30,11,58,0.7);
+    }
+
+    .rule-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(30,11,58,0.25);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .rule-list.do li::before { background: #22C55E; }
+    .rule-list.dont li::before { background: #EF4444; }
+
+    /* ─── COLOR SWATCHES ─────────────────────────────────────────── */
+    .swatch-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(30,11,58,0.35);
+      margin-bottom: 14px;
+      margin-top: 36px;
+    }
+
+    .swatch-label:first-of-type { margin-top: 0; }
+
+    .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 14px; }
+
+    .color-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #EAE0F8;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      user-select: none;
+      background: white;
+    }
+
+    .color-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(30,11,58,0.13); }
+
+    .cc-swatch { height: 90px; }
+
+    .cc-info { padding: 11px 13px; }
+
+    .cc-name { font-size: 13px; font-weight: 700; color: var(--deep); margin-bottom: 2px; }
+
+    .cc-hex { font-size: 11px; font-weight: 600; color: rgba(30,11,58,0.4); font-family: 'Courier New', monospace; }
+
+    .cc-note { font-size: 11px; font-weight: 500; color: rgba(30,11,58,0.35); margin-top: 3px; line-height: 1.4; }
+
+    /* ─── GRADIENTS ─────────────────────────────────────────────── */
+    .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+
+    .grad-card { border-radius: 14px; overflow: hidden; border: 1.5px solid #EAE0F8; }
+
+    .grad-bar { height: 72px; }
+
+    .grad-info { background: white; padding: 13px 15px; }
+
+    .grad-name { font-size: 13px; font-weight: 700; color: var(--deep); margin-bottom: 3px; }
+
+    .grad-desc { font-size: 11px; font-weight: 500; color: rgba(30,11,58,0.4); line-height: 1.45; }
+
+    /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
+    .type-card {
+      border: 1.5px solid #EAE0F8;
+      border-radius: 16px;
+      padding: 36px;
+      background: var(--grey01);
+      margin-bottom: 20px;
+    }
+
+    .type-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: rgba(30,11,58,0.35);
+      margin-bottom: 18px;
+    }
+
+    .t-druk {
+      font-family: 'Druk', Impact, sans-serif;
+      font-weight: 700;
+      font-size: 68px;
+      line-height: 0.88;
+      text-transform: uppercase;
+      color: var(--deep);
+      margin-bottom: 18px;
+    }
+
+    .t-jakarta-xl {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--deep);
+      margin-bottom: 18px;
+    }
+
+    .t-jakarta-body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.72;
+      color: rgba(30,11,58,0.7);
+      max-width: 580px;
+    }
+
+    .t-meta {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(30,11,58,0.35);
+      border-top: 1px solid #EAE0F8;
+      padding-top: 14px;
+      margin-top: 18px;
+    }
+
+    /* ─── VOICE CARDS ────────────────────────────────────────────── */
+    .voice-card {
+      background: var(--deep);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1.5px solid rgba(255,255,255,0.06);
+    }
+
+    .vc-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -0.02em;
+      color: var(--rain);
+      margin-bottom: 6px;
+    }
+
+    .vc-alts {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 14px;
+    }
+
+    .vc-desc {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ─── TONE TABLE ─────────────────────────────────────────────── */
+    .tone-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1.5px solid #EAE0F8;
+      margin-top: 36px;
+    }
+
+    .tone-table th {
+      text-align: left;
+      padding: 13px 20px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(30,11,58,0.4);
+      background: var(--grey01);
+      border-bottom: 1.5px solid #EAE0F8;
+    }
+
+    .tone-table td {
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(30,11,58,0.7);
+      border-bottom: 1px solid #F3EEF8;
+      vertical-align: middle;
+    }
+
+    .tone-table tr:last-child td { border-bottom: none; }
+
+    .tone-context { font-weight: 700; color: var(--deep); }
+
+    .tone-heavy { color: var(--purple); font-weight: 700; }
+    .tone-medium { color: var(--deep); font-weight: 600; }
+    .tone-light { color: rgba(30,11,58,0.35); font-weight: 500; }
+
+    /* ─── AI SECTION ─────────────────────────────────────────────── */
+    .spectrum-bar {
+      height: 10px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, #1E0B3A 0%, #7E10D4 33%, #E55CCD 66%, #E0FF00 100%);
+      margin-bottom: 36px;
+    }
+
+    /* ─── COPY TOAST ─────────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: calc(var(--nav-w) + 50%);
+      transform: translateX(-50%) translateY(12px);
+      background: var(--deep);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      transition: all 0.2s;
+      pointer-events: none;
+      z-index: 9999;
+      white-space: nowrap;
+    }
+
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ─── SPACER ─────────────────────────────────────────────────── */
+    .mt { margin-top: 48px; }
+    .mt-sm { margin-top: 28px; }
+
+    /* ─── HAMBURGER ─────────────────────────────────────────────── */
+    .hamburger {
+      display: none;
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 300;
+      background: var(--white);
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: 0 2px 12px rgba(30,11,58,0.12);
+    }
+
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--deep);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Overlay behind sidebar when open on mobile */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(30,11,58,0.35);
+      z-index: 150;
+    }
+
+    .sidebar-overlay.active { display: block; }
+
+    /* ─── MOBILE RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      body { display: block; }
+
+      .hamburger { display: flex; }
+
+      .sidebar {
+        position: fixed;
+        top: 0; left: 0; bottom: 0;
+        width: 260px;
+        transform: translateX(-100%);
+        transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 200;
+        box-shadow: 4px 0 24px rgba(30,11,58,0.15);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      main {
+        margin-left: 0;
+        padding-top: 64px; /* clear the hamburger button */
+      }
+
+      .section {
+        padding: 48px 20px;
+      }
+
+      .grid-2, .grid-3, .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-combo-box--square {
+        width: 140px;
+        flex-shrink: 0;
+      }
+
+      /* Logomark grid stays side-by-side at fixed width, doesn't stretch */
+      .grid-2.logomark-grid {
+        grid-template-columns: repeat(2, 140px);
+        max-width: none;
+      }
+
+      .color-swatch { min-height: 100px; }
+
+      .grad-card { min-height: 100px; }
+
+      .tone-table { font-size: 13px; }
+      .tone-table th, .tone-table td { padding: 10px 12px; }
+
+      /* Stack all page image grids to single column */
+      .pages,
+      .pages.p2,
+      .pages.p3,
+      .pages.p4 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .cover-logo { width: 60%; }
+
+      #cover { padding: 80px 28px; }
+
+      .toast { left: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hidden SVG symbol for the logo -->
+<svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="hb-mark" viewBox="0 0 97.68 140.51">
+    <path fill="currentColor" d="m67.92,140.51c-.84,0-1.52-.68-1.52-1.52v-55.55c0-11.98-6.3-15.84-16.25-15.84-6.7,0-11.76,2.73-15.42,5.94-2.2,1.93-3.46,4.7-3.46,7.62v57.82c0,.84-.68,1.52-1.52,1.52H1.52c-.84,0-1.52-.68-1.52-1.52V1.52C0,.68.68,0,1.52,0h28.24c.84,0,1.52.68,1.52,1.52v49.11c0,1.32,1.58,2.02,2.55,1.11,6.39-6.04,17.03-11.75,31.37-11.75,22.34,0,32.49,12.59,32.49,30.66v68.34c0,.84-.68,1.52-1.52,1.52h-28.24Z"/>
+  </symbol>
+  <symbol id="hb-logo" viewBox="0 0 623.88 97.24">
+    <path fill="currentColor" d="m46.2,95.58c-.57,0-1.03-.46-1.03-1.03v-37.79c0-8.15-4.28-10.77-11.05-10.77-4.56,0-8,1.86-10.49,4.04-1.49,1.31-2.35,3.2-2.35,5.18v39.33c0,.57-.46,1.03-1.03,1.03H1.03c-.57,0-1.03-.46-1.03-1.03V1.03C0,.46.46,0,1.03,0h19.21c.57,0,1.03.46,1.03,1.03v33.4c0,.9,1.08,1.38,1.73.76,4.35-4.11,11.58-7.99,21.34-7.99,15.2,0,22.1,8.56,22.1,20.86v46.49c0,.57-.46,1.03-1.03,1.03h-19.21Z"/>
+    <path fill="currentColor" d="m74.14,62.15c0-18.79,13.54-34.95,36.19-34.95s36.47,16.16,36.47,34.95-13.54,35.09-36.47,35.09-36.19-16.3-36.19-35.09Zm50.84,0c0-8.84-5.25-16.16-14.64-16.16s-14.37,7.32-14.37,16.16,5.25,16.3,14.37,16.3,14.64-7.32,14.64-16.3Z"/>
+    <path fill="currentColor" d="m239.65,95.58c-.57,0-1.03-.46-1.03-1.03v-39.58c0-5.11-2.49-8.98-8.84-8.98-4.19,0-7.52,1.95-9.83,4.07-1.41,1.3-2.19,3.13-2.19,5.04v39.45c0,.57-.46,1.03-1.03,1.03h-19.21c-.57,0-1.03-.46-1.03-1.03v-39.58c0-5.11-2.35-8.98-8.7-8.98-4.22,0-7.49,1.97-9.81,4.11-1.41,1.3-2.21,3.13-2.21,5.05v39.39c0,.57-.46,1.03-1.03,1.03h-19.21c-.57,0-1.03-.46-1.03-1.03V29.89c0-.57.46-1.03,1.03-1.03h19.21c.57,0,1.03.46,1.03,1.03v4.45c0,.9,1.08,1.38,1.73.75,3.86-3.65,11.35-7.9,20.23-7.9,9.67,0,16.16,4.01,18.92,11.88,3.87-5.8,12.57-11.88,23.07-11.88,12.29,0,20.03,6.35,20.03,20.03v47.32c0,.57-.46,1.03-1.03,1.03h-19.07Z"/>
+    <path fill="currentColor" d="m267.4,62.15c0-19.34,14.5-34.95,35.36-34.95,19.75,0,34.12,14.5,34.12,37.16v3.8c0,.57-.46,1.03-1.03,1.03h-45.08c-.72,0-1.22.72-.97,1.39,1.98,5.3,7.37,9.52,16.28,9.52,4.38,0,11.39-1.8,15.46-4.95.47-.36,1.15-.24,1.48.25l8.11,12.23c.29.44.2,1.03-.21,1.37-6.69,5.53-17.33,8.23-27.19,8.23-20.58,0-36.33-13.4-36.33-35.09Zm35.36-17.82c-8.43,0-12.16,4.58-13.39,9.06-.18.66.32,1.3,1,1.3h24.98c.66,0,1.16-.61,1.01-1.25-.99-4.39-4.65-9.11-13.6-9.11Z"/>
+    <path fill="currentColor" d="m344.52,94.55V1.03c0-.57.46-1.03,1.03-1.03h19.21c.57,0,1.03.46,1.03,1.03v32.96c0,.93,1.13,1.38,1.77.72,5.04-5.2,11.45-7.51,17.98-7.51,16.71,0,29.42,13.12,29.42,34.95s-12.99,35.09-29.42,35.09c-6.68,0-12.81-2.44-17.99-7.52-.66-.64-1.76-.19-1.76.73v4.1c0,.57-.46,1.03-1.03,1.03h-19.21c-.57,0-1.03-.46-1.03-1.03Zm33.98-16.1c8.43,0,14.78-6.22,14.78-16.3s-6.35-16.16-14.78-16.16c-3.29,0-7.08,1.29-9.92,3.36-1.76,1.28-2.79,3.35-2.79,5.53v14.78c0,2.2,1.04,4.3,2.84,5.57,2.84,2.01,6.6,3.21,9.87,3.21Z"/>
+    <path fill="currentColor" d="m462.47,94.55v-5.6c-4.14,4.97-12.16,8.29-20.72,8.29-10.22,0-22.93-7.05-22.93-21.96,0-16.16,12.71-21.55,22.93-21.55,7.72,0,14.7,2.21,19.01,6.08.66.59,1.71.11,1.71-.78v-4.06c0-5.8-4.97-9.81-13.54-9.81-6.24,0-12.49,2.33-17.69,6.41-.5.4-1.24.24-1.54-.33l-6.89-12.94c-.23-.43-.13-.97.25-1.28,8.49-6.93,19.64-9.82,29.61-9.82,16.02,0,31.08,5.94,31.08,26.66v40.69c0,.57-.46,1.03-1.03,1.03h-19.21c-.57,0-1.03-.46-1.03-1.03Zm0-19.04h0c0-2.57-1.46-4.92-3.78-6.02s-5.28-1.67-8.1-1.67c-5.53,0-10.64,2.49-10.64,7.74s5.11,7.74,10.64,7.74c2.95,0,6.01-.65,8.42-1.93,2.15-1.14,3.46-3.42,3.46-5.85Z"/>
+    <path fill="currentColor" d="m490.06,86.14l7.8-13.4c.31-.54,1.03-.68,1.52-.3,5.27,4.17,15.15,8.22,22.58,8.22,6.35,0,8.98-1.8,8.98-4.7,0-8.29-38.82.28-38.82-26.8,0-11.74,10.22-21.96,28.59-21.96,10.94,0,20.08,3.35,27.16,8.31.43.3.55.87.31,1.33l-7.09,13.11c-.31.57-1.07.72-1.57.3-4.19-3.51-11.25-6.47-18.67-6.47-4.97,0-8.29,1.93-8.29,4.56,0,7.32,38.68-.28,38.68,27.08,0,12.71-11.19,21.83-30.25,21.83-11.65,0-23.56-3.76-30.69-9.78-.39-.33-.49-.88-.23-1.32Z"/>
+    <path fill="currentColor" d="m554.4,62.15c0-19.34,14.5-34.95,35.36-34.95,19.75,0,34.12,14.5,34.12,37.16v3.8c0,.57-.46,1.03-1.03,1.03h-45.08c-.72,0-1.22.72-.97,1.39,1.98,5.3,7.37,9.52,16.28,9.52,4.38,0,11.39-1.8,15.46-4.95.47-.36,1.15-.24,1.48.25l8.11,12.23c.29.44.2,1.03-.21,1.37-6.69,5.53-17.33,8.23-27.19,8.23-20.58,0-36.33-13.4-36.33-35.09Zm35.36-17.82c-8.43,0-12.16,4.58-13.39,9.06-.18.66.32,1.3,1,1.3h24.98c.66,0,1.16-.61,1.01-1.25-.99-4.39-4.65-9.11-13.6-9.11Z"/>
+  </symbol>
+</svg>
+
+<!-- HAMBURGER BUTTON (mobile only) -->
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sb-header">
+    <svg class="sb-logo" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+    <div class="sb-title">Brand Guidelines</div>
+  </div>
+  <nav>
+    <a href="#overview"     class="sb-link">Welcome</a>
+    <a href="#principles"   class="sb-link">Principles</a>
+    <a href="#logo"         class="sb-link">Logo</a>
+    <a href="#cobranding"   class="sb-link">Cobranding</a>
+    <a href="#ai"           class="sb-link">AI Branding</a>
+    <a href="#color"        class="sb-link">Color</a>
+    <a href="#typography"   class="sb-link">Typography</a>
+    <a href="#elements"     class="sb-link">Graphic Elements</a>
+    <a href="#backgrounds"  class="sb-link">Backgrounds</a>
+    <a href="#product"      class="sb-link">Product</a>
+    <a href="#photography"  class="sb-link">Photography</a>
+    <a href="#voice"        class="sb-link">Voice &amp; Tone</a>
+    <a href="#gallery"      class="sb-link">Gallery</a>
+  </nav>
+</aside>
+
+<main>
+
+  <!-- ── COVER ── -->
+  <section id="cover">
+    <svg class="cover-logo" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+    <div class="cover-body">
+      <div class="cover-title">Homebase Brand Guidelines</div>
+      <div class="cover-version">Version 1.0 — January 2026</div>
+    </div>
+  </section>
+
+  <!-- ── OVERVIEW ── -->
+  <section id="overview" class="section">
+    <div class="s-title">Welcome</div>
+    <p class="s-lead">These guidelines are your source of truth for how our brand looks, sounds, and shows up in the world. Here, you'll find our brand elements, visual examples, and guidance for creating work.</p>
+
+    <div class="grid-2">
+      <div class="cb">
+        <h3>Homebase</h3>
+        <p>Homebase strives to make hourly work easier for every small business. Our app brings together scheduling, time tracking, and payroll—using AI thoughtfully to help teams focus less on admin and more on the work that matters.</p>
+      </div>
+      <div class="cb">
+        <h3>Brand</h3>
+        <p>Our Homebase brand is about what we do, make, and say. How we present ourselves to the world. The more cohesive and consistent our efforts are, the more we resonate with—and convert—our audience.</p>
+      </div>
+    </div>
+
+    <div class="pages p3">
+      <img src="brand-assets/page-02.jpg" alt="" />
+      <img src="brand-assets/page-03.jpg" alt="" />
+      <img src="brand-assets/page-04.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── PRINCIPLES ── -->
+  <section id="principles" class="section alt">
+    <div class="s-title">Creative Principles</div>
+    <p class="s-lead">Our brand work reflects the ethos of the small businesses we serve—guided by these four principles: human, approachable, impactful and crafted.</p>
+
+    <div class="grid-3">
+      <div class="principle-card">
+        <div class="pc-num">01</div>
+        <div class="pc-name">Human</div>
+        <p class="pc-desc">We reflect the realities of small businesses. Our work captures authentic experiences that resonate with the people we serve.</p>
+      </div>
+      <div class="principle-card">
+        <div class="pc-num">02</div>
+        <div class="pc-name">Approachable</div>
+        <p class="pc-desc">We meet people where they are through simplicity and warmth—removing barriers and creating work that feels welcoming.</p>
+      </div>
+      <div class="principle-card">
+        <div class="pc-num">03</div>
+        <div class="pc-name">Bold</div>
+        <p class="pc-desc">We keep people engaged through bold, thoughtful ideas and execution—always pushing forward without sacrificing clarity.</p>
+      </div>
+    </div>
+
+    <div class="pages p3">
+      <img src="brand-assets/page-05.jpg" alt="" />
+      <img src="brand-assets/page-06.jpg" alt="" />
+      <img src="brand-assets/page-07.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── LOGO ── -->
+  <section id="logo" class="section">
+    <div class="s-title">Logo</div>
+    <p class="s-lead">Our logo, logotype and logomark, should never be altered or modified in any way. It may only appear in Purple Haze or white—no other colors are permitted. The logotype should never be outlined, stylized, or adjusted, and must always appear as a single, unified color without being divided or separated.</p>
+
+    <div class="grid-2 mt-sm">
+      <div class="cb">
+        <h3>Logotype</h3>
+        <p>The wordmark — <strong>homebase</strong> in lowercase — is our primary logo. Use Purple Haze on light backgrounds, White on dark backgrounds. No other colors, ever.</p>
+      </div>
+      <div class="cb">
+        <h3>Logomark</h3>
+        <p>The <strong>h</strong> icon is reserved for small spaces and app icons only. Never use it alongside the logotype — it's a standalone symbol for contexts where the full wordmark won't fit.</p>
+      </div>
+    </div>
+
+    <div class="swatch-label" style="margin-top:40px;">Logotype — approved color combinations</div>
+    <div class="grid-4">
+      <div class="logo-combo-card">
+        <div class="logo-combo-box" style="background:#FBFBFB;">
+          <svg style="color:#7E10D4;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+        </div>
+        <div class="logo-combo-caption">Purple Haze on Light</div>
+      </div>
+      <div class="logo-combo-card">
+        <div class="logo-combo-box" style="background:#7E10D4;">
+          <svg style="color:#FFFFFF;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+        </div>
+        <div class="logo-combo-caption">White on Purple Haze</div>
+      </div>
+      <div class="logo-combo-card">
+        <div class="logo-combo-box" style="background:#1E0B3A;">
+          <svg style="color:#7E10D4;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+        </div>
+        <div class="logo-combo-caption">Purple Haze on Deep Purple</div>
+      </div>
+      <div class="logo-combo-card">
+        <div class="logo-combo-box" style="background:#1E0B3A;">
+          <svg style="color:#FFFFFF;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+        </div>
+        <div class="logo-combo-caption">White on Deep Purple</div>
+      </div>
+    </div>
+
+    <div class="swatch-label" style="margin-top:36px;">Logomark — small spaces &amp; app icons only</div>
+    <div class="grid-2 logomark-grid" style="max-width:360px;">
+      <div class="logo-combo-card">
+        <div class="logo-combo-box logo-combo-box--square" style="background:#FBFBFB;">
+          <svg style="color:#7E10D4; height:48px; width:auto;" viewBox="0 0 97.68 140.51" xmlns="http://www.w3.org/2000/svg"><use href="#hb-mark"/></svg>
+        </div>
+        <div class="logo-combo-caption">Purple Haze on Light</div>
+      </div>
+      <div class="logo-combo-card">
+        <div class="logo-combo-box logo-combo-box--square" style="background:#7E10D4;">
+          <svg style="color:#FFFFFF; height:48px; width:auto;" viewBox="0 0 97.68 140.51" xmlns="http://www.w3.org/2000/svg"><use href="#hb-mark"/></svg>
+        </div>
+        <div class="logo-combo-caption">White on Purple Haze</div>
+      </div>
+    </div>
+
+    <div class="do-dont mt">
+      <div>
+        <div class="dd-head dd-do">Do</div>
+        <ul class="rule-list do">
+          <li>Always use the full lowercase logotype as the primary mark</li>
+          <li>Use Purple Haze on light or white backgrounds</li>
+          <li>Use White on dark or purple backgrounds</li>
+          <li>Maintain generous clear space around the logo on all sides</li>
+          <li>Use the h icon only in small-space or app icon contexts</li>
+        </ul>
+      </div>
+      <div>
+        <div class="dd-head dd-dont">Don't</div>
+        <ul class="rule-list dont">
+          <li>Capitalize or alter the casing of the logotype in any way</li>
+          <li>Apply outlines, strokes, drop shadows, or glows</li>
+          <li>Rotate, skew, or distort the logo</li>
+          <li>Place on busy or low-contrast backgrounds</li>
+          <li>Use any color other than Purple Haze or White</li>
+          <li>Pair the h icon alongside the full logotype</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pages p2 mt">
+      <img src="brand-assets/page-08.jpg" alt="" />
+      <img src="brand-assets/page-09.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── COBRANDING ── -->
+  <section id="cobranding" class="section alt">
+    <div class="s-title">Cobranding</div>
+    <p class="s-lead">We collaborate with many partners, and our campaigns often feature both our logo and a partner's logo. In these cases, the two logos should be separated by an "X", with equal spacing between each logo and the "X" to maintain balance and clarity.</p>
+
+    <div class="grid-2 mt-sm">
+      <div class="cb">
+        <h3>Separation</h3>
+        <p>Always use an "X" between the homebase logotype and the partner logo. Maintain equal spacing on both sides of the "X" — the spacing from each logo to the "X" should be identical.</p>
+      </div>
+      <div class="cb">
+        <h3>Sizing</h3>
+        <p>Pay close attention to sizing—logos should be adjusted so they appear optically equal, ensuring neither brand outweighs the other.</p>
+      </div>
+    </div>
+
+    <!-- Live cobranding example -->
+    <div style="margin-top:36px; border:1.5px solid #EAE0F8; border-radius:16px; padding:40px 48px; background:#FAFAFA; display:flex; align-items:center; justify-content:center; gap:32px;">
+      <svg style="color:#7E10D4; height:28px; width:auto; flex-shrink:0;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:22px; color:rgba(30,11,58,0.25); flex-shrink:0; line-height:1;">×</span>
+      <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:22px; color:rgba(30,11,58,0.3); letter-spacing:-0.02em; line-height:1;">Partner</span>
+    </div>
+    <p style="text-align:center; font-size:12px; font-weight:600; color:rgba(30,11,58,0.35); margin-top:12px; letter-spacing:0.3px;">Equal spacing between each logo and the × separator</p>
+
+    <div class="pages p2 mt-sm">
+      <img src="brand-assets/page-10.jpg" alt="" />
+      <img src="brand-assets/page-11.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── AI BRANDING ── -->
+  <section id="ai" class="section">
+    <div class="s-title">AI Branding</div>
+    <p class="s-lead">Assets promoting our AI Assistants use our spectrum gradient to add energy and relevancy. The sparkles icon further distinguishes AI Assistants from our other offerings.</p>
+
+    <div class="grid-2">
+      <div class="cb">
+        <h3>✦ Sparkle Icon</h3>
+        <p>The four-pointed sparkle (✦) marks AI-powered features and surfaces. It signals "this is AI" without over-explaining. Use it as a small badge or inline indicator next to AI feature labels and entry points.</p>
+      </div>
+      <div class="cb">
+        <h3>Spectrum Gradient</h3>
+        <p>Deep Purple → Purple Haze → Pink Floyd → Yellowcard. This gradient is exclusively for AI branding contexts — do not use it anywhere else. It expresses intelligence, energy, and possibility.</p>
+      </div>
+    </div>
+
+    <div class="pages p1 mt">
+      <img src="brand-assets/page-12.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── COLOR ── -->
+  <section id="color" class="section alt">
+    <div class="s-title">Color</div>
+    <p class="s-lead">Purple Haze is the anchor of our visual identity and should always be present in our compositions. Secondary colors should be used sparingly and only to support key moments. Yellowcard and Pink Floyd should never be used as primary colors or background colors.</p>
+
+    <div class="swatch-label">Primary Palette</div>
+    <div class="color-grid">
+      <div class="color-card" onclick="copyHex('#7E10D4')">
+        <div class="cc-swatch" style="background:#7E10D4;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Purple Haze</div>
+          <div class="cc-hex">#7E10D4</div>
+          <div class="cc-note">Brand anchor — always present</div>
+        </div>
+      </div>
+      <div class="color-card" onclick="copyHex('#1E0B3A')">
+        <div class="cc-swatch" style="background:#1E0B3A;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Deep Purple</div>
+          <div class="cc-hex">#1E0B3A</div>
+          <div class="cc-note">Depth and contrast</div>
+        </div>
+      </div>
+      <div class="color-card" onclick="copyHex('#FFFFFF')" style="border-color:#D8D0F0;">
+        <div class="cc-swatch" style="background:#FFFFFF; border-bottom:1px solid #EAE0F8;"></div>
+        <div class="cc-info">
+          <div class="cc-name">White Stripes</div>
+          <div class="cc-hex">#FFFFFF</div>
+          <div class="cc-note">Primary light surface</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swatch-label">Secondary Palette — Accent Use Only</div>
+    <div class="color-grid">
+      <div class="color-card" onclick="copyHex('#D5C7FF')">
+        <div class="cc-swatch" style="background:#D5C7FF;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Purple Rain</div>
+          <div class="cc-hex">#D5C7FF</div>
+          <div class="cc-note">Light lavender accent</div>
+        </div>
+      </div>
+      <div class="color-card" onclick="copyHex('#E0FF00')">
+        <div class="cc-swatch" style="background:#E0FF00;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Yellowcard</div>
+          <div class="cc-hex">#E0FF00</div>
+          <div class="cc-note">Electric yellow-green accent</div>
+        </div>
+      </div>
+      <div class="color-card" onclick="copyHex('#E55CCD')">
+        <div class="cc-swatch" style="background:#E55CCD;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Pink Floyd</div>
+          <div class="cc-hex">#E55CCD</div>
+          <div class="cc-note">Hot pink accent</div>
+        </div>
+      </div>
+      <div class="color-card" onclick="copyHex('#FBFBFB')" style="border-color:#D8D0F0;">
+        <div class="cc-swatch" style="background:#FBFBFB; border-bottom:1px solid #EAE0F8;"></div>
+        <div class="cc-info">
+          <div class="cc-name">Grey 01</div>
+          <div class="cc-hex">#FBFBFB</div>
+          <div class="cc-note">Near-white background</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swatch-label">Gradients</div>
+    <div class="grad-grid">
+      <div class="grad-card">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#1E0B3A,#7E10D4,#E55CCD,#E0FF00);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Spectrum</div>
+          <div class="grad-desc">AI Branding only — Deep Purple → Purple Haze → Pink Floyd → Yellowcard</div>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#1E0B3A,#7E10D4,#D5C7FF);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Purple</div>
+          <div class="grad-desc">General use — Deep Purple → Purple Haze → Purple Rain</div>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#7E10D4,#D5C7FF);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Light Purple</div>
+          <div class="grad-desc">General use — Purple Haze → Purple Rain</div>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#7E10D4,#FFFFFF);"></div>
+        <div class="grad-info">
+          <div class="grad-name">Purple to White</div>
+          <div class="grad-desc">General use — Purple Haze → White Stripes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pages p2 mt">
+      <img src="brand-assets/page-15.jpg" alt="" />
+      <img src="brand-assets/page-16.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── TYPOGRAPHY ── -->
+  <section id="typography" class="section">
+    <div class="s-title">Typography</div>
+    <p class="s-lead">Two typefaces carry everything. Druk sets the tone — big, bold, unmistakable. Plus Jakarta Sans does the everyday work, readable and human at every size.</p>
+
+    <div class="type-card">
+      <div class="type-tag">Display — Druk Bold</div>
+      <div class="t-druk">Making hourly<br>work easier.</div>
+      <div class="t-meta">Druk Bold · 164pt / 86% line height · Always uppercase · Use for H1s, campaign headlines, presentation titles only. Condensed and Wide cuts for expressive moments — never functional copy.</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-tag">Headline — Plus Jakarta Sans Extra Bold</div>
+      <div class="t-jakarta-xl">Run your team.<br>Grow your business.</div>
+      <div class="t-meta">Plus Jakarta Sans Extra Bold · 112pt / 92% line height · −2 letter spacing · Use for all sub-headline levels</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-tag">Body — Plus Jakarta Sans Medium</div>
+      <div class="t-jakarta-body">homebase helps small businesses run their teams without the headaches. From scheduling to payroll, we've built tools that work as hard as you do — so you can focus on what you actually love about running your business.</div>
+      <div class="t-meta">Plus Jakarta Sans Medium · 16pt / 170% line height · Default for all body copy, captions, UI text, and anything below headline level</div>
+    </div>
+
+    <div class="grid-2 mt">
+      <div class="cb">
+        <h3>Druk — Impact & Display</h3>
+        <p>Bold is the only weight for functional use (H1s, headlines, titles). Condensed and Wide are expressive cuts — artistic moments only. Druk should feel like it commands attention without shouting.</p>
+      </div>
+      <div class="cb">
+        <h3>Plus Jakarta Sans — Everyday Workhorse</h3>
+        <p>Extra Bold for all headline levels below Druk. Medium for body, captions, and UI copy. This typeface carries the vast majority of our communication across product, marketing, and social.</p>
+      </div>
+    </div>
+
+    <div class="pages p4 mt">
+      <img src="brand-assets/page-17.jpg" alt="" />
+      <img src="brand-assets/page-18.jpg" alt="" />
+      <img src="brand-assets/page-19.jpg" alt="" />
+      <img src="brand-assets/page-20.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── GRAPHIC ELEMENTS ── -->
+  <section id="elements" class="section alt">
+    <div class="s-title">Graphic Elements</div>
+    <p class="s-lead">A handful of graphic tools add personality and energy without overwhelming the message. Use them with intention — less is always more.</p>
+
+    <div class="grid-2">
+      <div class="cb">
+        <h3>Large Icons</h3>
+        <p>Large icons are used as small visual accents to emphasize key messages or to add subtle background interest. Apply them thoughtfully to avoid overwhelming the layout.</p>
+      </div>
+      <div class="cb">
+        <h3>Hand-Drawn Elements</h3>
+        <p>Hand-drawn marks help draw attention to specific content. Use them sparingly to maintain clarity and avoid visual clutter.</p>
+      </div>
+      <div class="cb">
+        <h3>Stickers</h3>
+        <p>Stickers add depth, personality, and moments of emphasis. They should be used selectively and never in excess.</p>
+      </div>
+      <div class="cb">
+        <h3>Emojis</h3>
+        <p>Emojis introduce energy and informality to certain pieces. Use them with restraint to ensure they enhance the message rather than distract from it.</p>
+      </div>
+    </div>
+
+    <div class="pages p4 mt">
+      <img src="brand-assets/page-22.jpg" alt="" />
+      <img src="brand-assets/page-23.jpg" alt="" />
+      <img src="brand-assets/page-24.jpg" alt="" />
+      <img src="brand-assets/page-25.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── BACKGROUNDS ── -->
+  <section id="backgrounds" class="section">
+    <div class="s-title">Backgrounds</div>
+    <p class="s-lead">We use a range of background styles—from textured and photo backgrounds to solid or purple fields. Regardless of the style, backgrounds should always support the content placed on top of them. They should never overpower the artwork or typography, but instead complement and balance it, ensuring the message remains clear and visually accessible.</p>
+
+    <div class="pages p2 mt-sm">
+      <img src="brand-assets/page-27.jpg" alt="" />
+      <img src="brand-assets/page-30.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── PRODUCT ── -->
+  <section id="product" class="section alt">
+    <div class="s-title">Product</div>
+    <p class="s-lead">Product visuals are used in two ways: full, detailed screens to demonstrate functionality, and simplified representations to add context without overwhelming the layout.</p>
+
+    <div class="grid-2">
+      <div class="cb">
+        <h3>Full, Detailed Screens</h3>
+        <p>We use full-scale, detailed product screens to clearly demonstrate what our product looks like and how it works. These are shown at a larger size to highlight functionality and design. Full product views are also used in context—on laptops, tablets, or handheld devices within photography—to show the product in real-life usage.</p>
+      </div>
+      <div class="cb">
+        <h3>Simplified Screens</h3>
+        <p>We also use smaller or less detailed representations of the product to add subtle background messages or context. These convey core functionality without requiring full interface detail and work well in layouts where space or clarity is a priority.</p>
+      </div>
+    </div>
+
+    <div class="pages p3 mt">
+      <img src="brand-assets/page-28.jpg" alt="" />
+      <img src="brand-assets/page-29.jpg" alt="" />
+      <img src="brand-assets/page-30.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── PHOTOGRAPHY ── -->
+  <section id="photography" class="section">
+    <div class="s-title">Photography</div>
+    <p class="s-lead">Our photography celebrates the people who make small businesses run: owners, employees, and teams. We want people to look natural—everyday heroes who are relatable and inspiring. They should be candid, warm, and friendly.</p>
+
+    <div class="grid-3">
+      <div class="cb">
+        <h3>People</h3>
+        <p>Feature small business owners, employees, and teams (groups).</p>
+      </div>
+      <div class="cb">
+        <h3>Products</h3>
+        <p>Highlight what the business sells or makes. Keep it simple.</p>
+      </div>
+      <div class="cb">
+        <h3>Spaces</h3>
+        <p>Capture the space and special details to give a sense of place and personality.</p>
+      </div>
+    </div>
+
+    <div class="do-dont mt">
+      <div>
+        <div class="dd-head dd-do">Do</div>
+        <ul class="rule-list do">
+          <li>Use natural light whenever possible — avoid harsh midday sun</li>
+          <li>Keep retouching light and realistic; preserve natural skin tones</li>
+          <li>Apply warm color overlay (R210 G205 B200) when placing type over photos</li>
+          <li>Show real environments, real people, real moments</li>
+          <li>Choose images with warm, inviting color temperatures</li>
+        </ul>
+      </div>
+      <div>
+        <div class="dd-head dd-dont">Don't</div>
+        <ul class="rule-list dont">
+          <li>Use overly staged or corporate-looking photography</li>
+          <li>Apply heavy filters, extreme color grading, or artificial looks</li>
+          <li>Choose stock images with forced smiles or artificial scenarios</li>
+          <li>Place type directly on photos without the warm color overlay</li>
+          <li>Feature environments or people that don't reflect our customer base</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pages p3 mt">
+      <img src="brand-assets/page-31.jpg" alt="" />
+      <img src="brand-assets/page-32.jpg" alt="" />
+      <img src="brand-assets/page-33.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── VOICE & TONE ── -->
+  <section id="voice" class="section">
+    <div class="s-title">Voice &amp; Tone</div>
+    <p class="s-lead">Voice is how Homebase always sounds and how we keep the brand consistent. No matter where we appear, we are:</p>
+
+    <div class="grid-3">
+      <div class="voice-card">
+        <div class="vc-name">Neighborly</div>
+        <div class="vc-alts">Helpful · Relatable · Accessible</div>
+        <p class="vc-desc">We have deep respect for small businesses and the people behind them. Show up as a neighbor they can always lean on. Be kind, approachable, and use everyday language familiar to a wide range of teams.</p>
+      </div>
+      <div class="voice-card">
+        <div class="vc-name">Clear</div>
+        <div class="vc-alts">Straightforward · Direct · Transparent</div>
+        <p class="vc-desc">We take pride in saving people time and have compassion for the people before them. When a message is easily understood, it's easier to act on. Prioritize what's most valuable to the reader.</p>
+      </div>
+      <div class="voice-card">
+        <div class="vc-name">Proactive</div>
+        <div class="vc-alts">Confident · Ready · Relatable</div>
+        <p class="vc-desc">We're dedicated to making work easier for small businesses. Our voice should reflect our steady passion for problem-solving: confident, reassuring, and focused on helping teams move forward.</p>
+      </div>
+    </div>
+
+    <p class="s-lead" style="margin-top:48px;margin-bottom:0;">Our voice is constant. Our <strong>tone</strong> is how we can adjust our voice for specific moments across the customer journey:</p>
+
+    <table class="tone-table">
+      <thead>
+        <tr>
+          <th>Context</th>
+          <th>Neighborly</th>
+          <th>Clear</th>
+          <th>Proactive</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tone-context">First interactions <span style="font-weight:500;color:rgba(30,11,58,0.4);font-size:12px;display:block;">Paid social, direct mail, OOH, audio, partnerships</span></td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-medium">Medium</td>
+          <td class="tone-light">Light</td>
+        </tr>
+        <tr>
+          <td class="tone-context">Consideration <span style="font-weight:500;color:rgba(30,11,58,0.4);font-size:12px;display:block;">Website, app store, sell sheets</span></td>
+          <td class="tone-medium">Medium</td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-heavy">Heavy</td>
+        </tr>
+        <tr>
+          <td class="tone-context">Education <span style="font-weight:500;color:rgba(30,11,58,0.4);font-size:12px;display:block;">Product pages, launches &amp; updates</span></td>
+          <td class="tone-light">Light</td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-heavy">Heavy</td>
+        </tr>
+        <tr>
+          <td class="tone-context">Engagement <span style="font-weight:500;color:rgba(30,11,58,0.4);font-size:12px;display:block;">Organic social, lifecycle email, editorial</span></td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-light">Light</td>
+          <td class="tone-medium">Medium</td>
+        </tr>
+        <tr>
+          <td class="tone-context">Support <span style="font-weight:500;color:rgba(30,11,58,0.4);font-size:12px;display:block;">Issue comms, troubleshooting, difficult news</span></td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-heavy">Heavy</td>
+          <td class="tone-light">Light</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pages p4 mt">
+      <img src="brand-assets/page-34.jpg" alt="" />
+      <img src="brand-assets/page-35.jpg" alt="" />
+      <img src="brand-assets/page-36.jpg" alt="" />
+      <img src="brand-assets/page-37.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section id="gallery" class="section alt">
+    <div class="s-title">Gallery</div>
+    <div class="pages p1 mt-sm">
+      <img src="brand-assets/page-40.jpg" alt="" />
+      <img src="brand-assets/page-41.jpg" alt="" />
+      <img src="brand-assets/page-42.jpg" alt="" />
+      <img src="brand-assets/page-43.jpg" alt="" />
+    </div>
+  </section>
+
+</main>
+
+<!-- Copy toast notification -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── COPY HEX ────────────────────────────────────────────────────────────────
+function copyHex(hex) {
+  navigator.clipboard.writeText(hex).then(() => {
+    const t = document.getElementById('toast');
+    t.textContent = hex + ' copied to clipboard';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1800);
+  });
+}
+
+// ── ACTIVE NAV ───────────────────────────────────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const links    = document.querySelectorAll('.sb-link');
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-15% 0px -75% 0px' });
+
+sections.forEach(s => io.observe(s));
+
+// ── HAMBURGER MENU ───────────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const sidebar   = document.getElementById('sidebar');
+const overlay   = document.getElementById('sidebarOverlay');
+
+function openMenu() {
+  sidebar.classList.add('open');
+  overlay.classList.add('active');
+  hamburger.classList.add('open');
+}
+
+function closeMenu() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('active');
+  hamburger.classList.remove('open');
+}
+
+hamburger.addEventListener('click', () => {
+  sidebar.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+overlay.addEventListener('click', closeMenu);
+
+// Close menu when a nav link is tapped on mobile
+document.querySelectorAll('.sb-link').forEach(link => {
+  link.addEventListener('click', () => { if (window.innerWidth <= 768) closeMenu(); });
+});
+</script>
+
+</body>
+</html>
