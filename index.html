@@ -233,10 +233,14 @@
 
     /* ─── PRINCIPLES ────────────────────────────────────────────── */
     .principle-card {
-      background: var(--grey01);
-      border: 1.5px solid #EAE0F8;
       border-radius: 16px;
       padding: 28px;
+      background-size: cover;
+      background-position: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
 
     .pc-num {
@@ -244,7 +248,7 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--purple);
+      color: rgba(255,255,255,0.6);
       margin-bottom: 6px;
     }
 
@@ -253,7 +257,7 @@
       font-weight: 800;
       font-size: 26px;
       letter-spacing: -0.02em;
-      color: var(--deep);
+      color: #ffffff;
       margin-bottom: 12px;
     }
 
@@ -261,7 +265,7 @@
       font-size: 14px;
       font-weight: 500;
       line-height: 1.65;
-      color: rgba(30,11,58,0.6);
+      color: rgba(255,255,255,0.75);
     }
 
     /* ─── LOGO COMBOS ────────────────────────────────────────────── */
@@ -272,7 +276,7 @@
     }
 
     .logo-combo-box {
-      padding: 28px 24px;
+      padding: 48px 32px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -541,6 +545,108 @@
 
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+    /* ─── LOGO DON'T USE IMAGES ──────────────────────────────────── */
+    .logo-dont-desktop,
+    .logo-dont-mobile {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+    }
+
+    .logo-dont-mobile { display: none; }
+
+    .logo-big-photo {
+      margin-left: -52px;
+      margin-right: -52px;
+      margin-bottom: -80px;
+      padding-bottom: 48px;
+    }
+
+    .logo-big-photo img {
+      display: block;
+      width: 100%;
+      border-radius: 24px;
+    }
+
+    /* ─── WELCOME STRIPS ─────────────────────────────────────────── */
+    .welcome-strips {
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      /* Break out of section horizontal padding */
+      margin-left: -72px;
+      margin-right: -72px;
+    }
+
+    .strip-wrap {
+      overflow: hidden;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .strip {
+      display: block;
+      width: 110%;
+      height: auto;
+      will-change: transform;
+      /* Start offset so it can slide both directions */
+      transform: translateX(-5%);
+    }
+
+    /* ─── WELCOME HERO ────────────────────────────────────────────── */
+    .welcome-hero {
+      position: relative;
+      margin-top: 40px;
+      margin-left: -52px;
+      margin-right: -52px;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .welcome-hero img {
+      display: block;
+      width: 100%;
+      height: 640px;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    /* Dark gradient so text reads clearly */
+    .welcome-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(30,11,58,0.72) 0%, rgba(30,11,58,0.2) 55%, transparent 100%);
+    }
+
+    .welcome-hero-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 52px;
+      right: 52px;
+      z-index: 2;
+    }
+
+    .hero-descriptor {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.2px;
+      margin-bottom: 10px;
+    }
+
+    .hero-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(24px, 3.5vw, 48px);
+      color: #ffffff;
+      line-height: 1.15;
+      max-width: 720px;
+    }
+
     /* ─── SPACER ─────────────────────────────────────────────────── */
     .mt { margin-top: 48px; }
     .mt-sm { margin-top: 28px; }
@@ -585,6 +691,11 @@
     }
 
     .sidebar-overlay.active { display: block; }
+
+    /* ─── TABLET: collapse 3-col grids early ─────────────────────── */
+    @media (max-width: 1100px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
 
     /* ─── MOBILE RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 768px) {
@@ -651,6 +762,28 @@
       #cover { padding: 80px 28px; }
 
       .toast { left: 50%; }
+
+      .logo-dont-desktop { display: none; }
+      .logo-dont-mobile { display: block; }
+
+      .logo-big-photo {
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: -48px;
+      }
+
+      .welcome-strips {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+
+      .welcome-hero img { height: 420px; }
+
+      .welcome-hero-text {
+        left: 24px;
+        right: 24px;
+        bottom: 32px;
+      }
     }
   </style>
 </head>
@@ -729,11 +862,25 @@
       </div>
     </div>
 
-    <div class="pages p3">
-      <img src="brand-assets/page-02.jpg" alt="" />
-      <img src="brand-assets/page-03.jpg" alt="" />
-      <img src="brand-assets/page-04.jpg" alt="" />
+    <!-- Horizontal scroll strips -->
+    <div class="welcome-strips">
+      <div class="strip-wrap">
+        <img class="strip" id="strip1" src="brand-assets/01-welcome/row-1.jpg" alt="" />
+      </div>
+      <div class="strip-wrap">
+        <img class="strip" id="strip2" src="brand-assets/01-welcome/row-2.jpg" alt="" />
+      </div>
     </div>
+
+    <!-- Full-bleed image with text overlay -->
+    <div class="welcome-hero">
+      <img src="brand-assets/01-welcome/big-image.jpg" alt="" />
+      <div class="welcome-hero-text">
+        <p class="hero-descriptor">Our brand promise</p>
+        <p class="hero-headline">To make hourly work easier for every small business.</p>
+      </div>
+    </div>
+
   </section>
 
   <!-- ── PRINCIPLES ── -->
@@ -742,28 +889,30 @@
     <p class="s-lead">Our brand work reflects the ethos of the small businesses we serve—guided by these four principles: human, approachable, impactful and crafted.</p>
 
     <div class="grid-3">
-      <div class="principle-card">
+      <div class="principle-card" style="background-image:url('brand-assets/02-principles/human.jpg');">
         <div class="pc-num">01</div>
         <div class="pc-name">Human</div>
         <p class="pc-desc">We reflect the realities of small businesses. Our work captures authentic experiences that resonate with the people we serve.</p>
       </div>
-      <div class="principle-card">
+      <div class="principle-card" style="background-image:url('brand-assets/02-principles/approchable.jpg');">
         <div class="pc-num">02</div>
         <div class="pc-name">Approachable</div>
         <p class="pc-desc">We meet people where they are through simplicity and warmth—removing barriers and creating work that feels welcoming.</p>
       </div>
-      <div class="principle-card">
+      <div class="principle-card" style="background-image:url('brand-assets/02-principles/bold.jpg');">
         <div class="pc-num">03</div>
         <div class="pc-name">Bold</div>
         <p class="pc-desc">We keep people engaged through bold, thoughtful ideas and execution—always pushing forward without sacrificing clarity.</p>
       </div>
     </div>
 
-    <div class="pages p3">
-      <img src="brand-assets/page-05.jpg" alt="" />
-      <img src="brand-assets/page-06.jpg" alt="" />
-      <img src="brand-assets/page-07.jpg" alt="" />
+    <!-- Horizontal scroll strip -->
+    <div class="welcome-strips mt">
+      <div class="strip-wrap">
+        <img class="strip" id="strip-principles" src="brand-assets/02-principles/row.jpg" alt="" />
+      </div>
     </div>
+
   </section>
 
   <!-- ── LOGO ── -->
@@ -850,10 +999,17 @@
       </div>
     </div>
 
-    <div class="pages p2 mt">
-      <img src="brand-assets/page-08.jpg" alt="" />
-      <img src="brand-assets/page-09.jpg" alt="" />
+    <!-- Don't use: desktop image on large screens, mobile image on small -->
+    <div class="mt">
+      <img class="logo-dont-desktop" src="brand-assets/03-logo/what-not-to-do-desktop.jpg" alt="Logo don't use examples" />
+      <img class="logo-dont-mobile" src="brand-assets/03-logo/what-not-to-do-mobile.jpg" alt="Logo don't use examples" />
     </div>
+
+    <!-- Big photo -->
+    <div class="logo-big-photo mt">
+      <img src="brand-assets/03-logo/logo-big-photo.jpg" alt="" />
+    </div>
+
   </section>
 
   <!-- ── COBRANDING ── -->
@@ -872,18 +1028,16 @@
       </div>
     </div>
 
-    <!-- Live cobranding example -->
-    <div style="margin-top:36px; border:1.5px solid #EAE0F8; border-radius:16px; padding:40px 48px; background:#FAFAFA; display:flex; align-items:center; justify-content:center; gap:32px;">
-      <svg style="color:#7E10D4; height:28px; width:auto; flex-shrink:0;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:22px; color:rgba(30,11,58,0.25); flex-shrink:0; line-height:1;">×</span>
-      <span style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:22px; color:rgba(30,11,58,0.3); letter-spacing:-0.02em; line-height:1;">Partner</span>
+    <!-- Partner lockup diagram -->
+    <div class="mt-sm">
+      <img src="brand-assets/04-cobrandnding/partner-lockup.jpg" alt="Cobranding lockup spacing guide" style="width:100%; display:block; border-radius:16px;" />
     </div>
-    <p style="text-align:center; font-size:12px; font-weight:600; color:rgba(30,11,58,0.35); margin-top:12px; letter-spacing:0.3px;">Equal spacing between each logo and the × separator</p>
 
-    <div class="pages p2 mt-sm">
-      <img src="brand-assets/page-10.jpg" alt="" />
-      <img src="brand-assets/page-11.jpg" alt="" />
+    <!-- Big partner example photo -->
+    <div class="logo-big-photo mt">
+      <img src="brand-assets/04-cobrandnding/partner-example.jpg" alt="Cobranding partner example" />
     </div>
+
   </section>
 
   <!-- ── AI BRANDING ── -->
@@ -902,8 +1056,8 @@
       </div>
     </div>
 
-    <div class="pages p1 mt">
-      <img src="brand-assets/page-12.jpg" alt="" />
+    <div class="logo-big-photo mt">
+      <img src="brand-assets/05-AI/AI-img.jpg" alt="AI Branding example" />
     </div>
   </section>
 
@@ -1288,6 +1442,29 @@ const io = new IntersectionObserver(entries => {
 }, { rootMargin: '-15% 0px -75% 0px' });
 
 sections.forEach(s => io.observe(s));
+
+// ── STRIP PARALLAX (all .welcome-strips groups) ──────────────────────────────
+function updateStripGroup(wrap) {
+  const strips = wrap.querySelectorAll('.strip');
+  if (!strips.length) return;
+  const rect = wrap.getBoundingClientRect();
+  const winH  = window.innerHeight;
+  const progress = 1 - (rect.bottom / (winH + rect.height));
+  const p = Math.max(0, Math.min(1, progress));
+  const shift = (p - 0.5) * 10;
+  strips.forEach((strip, i) => {
+    // Alternate direction: even strips go one way, odd go the other
+    const dir = i % 2 === 0 ? 1 : -1;
+    strip.style.transform = `translateX(${-5 + shift * dir}%)`;
+  });
+}
+
+function updateAllStrips() {
+  document.querySelectorAll('.welcome-strips').forEach(updateStripGroup);
+}
+
+window.addEventListener('scroll', updateAllStrips, { passive: true });
+updateAllStrips();
 
 // ── HAMBURGER MENU ───────────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
