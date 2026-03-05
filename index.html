@@ -30,23 +30,27 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #F5F0FC;
+      background: #FFFFFF;
       color: var(--deep);
       display: flex;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     /* ─── SIDEBAR ─────────────────────────────────────────────── */
     .sidebar {
       width: var(--nav-w);
-      flex-shrink: 0;
-      background: var(--grey01);
       position: fixed;
-      top: 0; left: 0; bottom: 0;
+      top: 24px;
+      left: 20px;
+      max-height: calc(100vh - 48px);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      padding: 32px 0 40px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(30,11,58,0.13), 0 1px 4px rgba(30,11,58,0.06);
+      padding: 24px 0 20px;
       z-index: 100;
     }
 
@@ -57,20 +61,22 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 8px;
-      padding: 0 28px 32px;
+      gap: 6px;
+      padding: 0 24px 20px;
+      border-bottom: 1px solid #EAE0F8;
+      margin-bottom: 8px;
     }
 
     .sb-logo {
-      height: 16px;
+      height: 14px;
       width: auto;
       color: var(--purple);
     }
 
     .sb-title {
       font-size: 11px;
-      font-weight: 700;
-      color: var(--deep);
+      font-weight: 600;
+      color: rgba(30,11,58,0.45);
       line-height: 1.2;
       letter-spacing: 0.1px;
     }
@@ -81,23 +87,34 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: rgba(30,11,58,0.3);
-      padding: 16px 28px 6px;
+      padding: 16px 24px 6px;
     }
 
     .sb-link {
-      display: block;
-      padding: 8px 28px;
-      color: rgba(30,11,58,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 24px;
+      color: rgba(30,11,58,0.5);
       text-decoration: none;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      transition: all 0.15s;
-      border-left: 3px solid transparent;
+      transition: color 0.15s;
       line-height: 1.3;
     }
 
-    .sb-link:hover { color: var(--deep); border-left-color: rgba(126,16,212,0.3); }
-    .sb-link.active { color: var(--deep); border-left-color: var(--purple); background: rgba(126,16,212,0.12); }
+    .sb-link::after {
+      content: '→';
+      font-size: 14px;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .sb-link:hover { color: var(--deep); }
+    .sb-link:hover::after { opacity: 1; transform: translateX(0); }
+    .sb-link.active { color: var(--deep); font-weight: 700; }
+    .sb-link.active::after { opacity: 1; transform: translateX(0); }
 
     /* ─── MAIN ─────────────────────────────────────────────────── */
     main { margin-left: var(--nav-w); flex: 1; min-width: 0; }
@@ -148,7 +165,8 @@
 
     /* ─── HERO ──────────────────────────────────────────────────── */
     #cover {
-      padding: 100px 72px 96px;
+      padding: 100px 72px 96px calc(72px + var(--nav-w));
+      margin-left: calc(-1 * var(--nav-w));
       background: url('bg-img.jpg') center/cover no-repeat;
       background-color: var(--deep);
       border-bottom: none;
@@ -545,6 +563,30 @@
 
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+    /* ─── COLOR INTRO TEXT ───────────────────────────────────────── */
+    .color-intro {
+      max-width: 600px;
+    }
+
+    .color-intro h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      color: var(--deep);
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
+
+    .color-intro h3:first-child { margin-top: 0; }
+
+    .color-intro p {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.7;
+      color: rgba(30,11,58,0.65);
+      margin-bottom: 8px;
+    }
+
     /* ─── LOGO DON'T USE IMAGES ──────────────────────────────────── */
     .logo-dont-desktop,
     .logo-dont-mobile {
@@ -556,8 +598,8 @@
     .logo-dont-mobile { display: none; }
 
     .logo-big-photo {
-      margin-left: -52px;
-      margin-right: -52px;
+      margin-left: calc(-72px - var(--nav-w));
+      margin-right: -72px;
       margin-bottom: -80px;
       padding-bottom: 48px;
     }
@@ -565,7 +607,6 @@
     .logo-big-photo img {
       display: block;
       width: 100%;
-      border-radius: 24px;
     }
 
     /* ─── WELCOME STRIPS ─────────────────────────────────────────── */
@@ -574,23 +615,24 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      /* Break out of section horizontal padding */
-      margin-left: -72px;
+      /* Break out to full viewport width including under sidebar */
+      margin-left: calc(-72px - var(--nav-w));
       margin-right: -72px;
     }
 
     .strip-wrap {
       overflow: hidden;
       width: 100%;
-      border-radius: 0;
+      height: 280px;
     }
 
     .strip {
       display: block;
       width: 110%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       will-change: transform;
-      /* Start offset so it can slide both directions */
       transform: translateX(-5%);
     }
 
@@ -598,10 +640,9 @@
     .welcome-hero {
       position: relative;
       margin-top: 40px;
-      margin-left: -52px;
-      margin-right: -52px;
+      margin-left: calc(-72px - var(--nav-w));
+      margin-right: -72px;
       overflow: hidden;
-      border-radius: 24px;
     }
 
     .welcome-hero img {
@@ -624,8 +665,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 52px;
-      right: 52px;
+      left: calc(var(--nav-w) + 72px);
+      right: 72px;
       z-index: 2;
     }
 
@@ -705,12 +746,18 @@
 
       .sidebar {
         position: fixed;
-        top: 0; left: 0; bottom: 0;
-        width: 260px;
-        transform: translateX(-100%);
+        top: 20px;
+        left: 20px;
+        bottom: 20px;
+        width: 240px;
+        transform: translateX(-120%);
         transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 200;
-        box-shadow: 4px 0 24px rgba(30,11,58,0.15);
+        max-height: none;
+        /* restore card styling for mobile slide-in panel */
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 8px 40px rgba(30,11,58,0.13), 0 1px 4px rgba(30,11,58,0.06);
       }
 
       .sidebar.open {
@@ -759,7 +806,7 @@
 
       .cover-logo { width: 60%; }
 
-      #cover { padding: 80px 28px; }
+      #cover { padding: 80px 28px; margin-left: 0; }
 
       .toast { left: 50%; }
 
@@ -777,12 +824,20 @@
         margin-right: -20px;
       }
 
+      .welcome-hero {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+
+      .strip-wrap { height: 180px; }
+
       .welcome-hero img { height: 420px; }
 
       .welcome-hero-text {
         left: 24px;
         right: 24px;
-        bottom: 32px;
+        top: 50%;
+        transform: translateY(-50%);
       }
     }
   </style>
@@ -1064,7 +1119,17 @@
   <!-- ── COLOR ── -->
   <section id="color" class="section alt">
     <div class="s-title">Color</div>
-    <p class="s-lead">Purple Haze is the anchor of our visual identity and should always be present in our compositions. Secondary colors should be used sparingly and only to support key moments. Yellowcard and Pink Floyd should never be used as primary colors or background colors.</p>
+
+    <div class="color-intro">
+      <h3>Primary Colors</h3>
+      <p>Purple Haze and white serve as our core brand colors, anchored by Deep Purple for depth and contrast. These colors form the foundation of our visual identity and should appear consistently across all brand touchpoints.</p>
+
+      <h3>Secondary Colors</h3>
+      <p>Our secondary palette includes Yellowcard and Pink Floyd. These colors provide flexibility and accent moments but should always support—never overshadow—the primary palette.</p>
+
+      <h3>Pairings, Proportions, and Backgrounds</h3>
+      <p>Purple should remain a constant element in our color usage. Color on white—or white on color—provides the strongest, cleanest expression of the brand. When creating compositions, limit palettes to Purple, white, and no more than two secondary colors at a time to maintain visual clarity.</p>
+    </div>
 
     <div class="swatch-label">Primary Palette</div>
     <div class="color-grid">
@@ -1130,6 +1195,12 @@
       </div>
     </div>
 
+    <div class="color-intro mt">
+      <h3>Gradients</h3>
+      <p>We use two primary gradients, each grounded in our signature Purple Haze.</p>
+      <p>Gradients should be applied thoughtfully and sparingly. The spectrum gradient should never be used as a background; reserve it for smaller, accent-level applications where it can add energy without overwhelming the design.</p>
+    </div>
+
     <div class="swatch-label">Gradients</div>
     <div class="grad-grid">
       <div class="grad-card">
@@ -1162,10 +1233,34 @@
       </div>
     </div>
 
-    <div class="pages p2 mt">
-      <img src="brand-assets/page-15.jpg" alt="" />
-      <img src="brand-assets/page-16.jpg" alt="" />
+    <!-- Acceptable / Unacceptable uses -->
+    <div class="grid-2 mt" style="align-items:start;">
+      <div>
+        <div class="swatch-label" style="margin-top:0; margin-bottom:12px;">Acceptable uses</div>
+        <img src="brand-assets/06-colors/acceptable-uses.jpg" alt="Acceptable color uses" style="width:100%; display:block; border-radius:16px;" />
+      </div>
+      <div>
+        <div class="swatch-label" style="margin-top:0; margin-bottom:12px;">Unacceptable uses</div>
+        <img src="brand-assets/06-colors/unacceptable-uses.jpg" alt="Unacceptable color uses" style="width:100%; display:block; border-radius:16px;" />
+      </div>
     </div>
+
+    <!-- How we approach color -->
+    <div class="color-intro mt">
+      <h3>How we approach color</h3>
+      <p>Purple Haze is the anchor of our visual identity and should always be present in our compositions.</p>
+      <p>Secondary colors should be used sparingly and only to support key moments. Yellowcard and Pink Floyd should never be used as primary colors or background colors.</p>
+      <p>The full spectrum gradient should also never serve as a full-background treatment; reserve it for smaller, accent-level applications where it adds energy without overwhelming the design.</p>
+      <p>Maintain strong contrast at all times. Light backgrounds should pair with darker elements, and dark backgrounds should pair with lighter elements to ensure clarity, accessibility, and visual balance.</p>
+    </div>
+
+    <!-- Horizontal scroll strip -->
+    <div class="welcome-strips mt">
+      <div class="strip-wrap">
+        <img class="strip" src="brand-assets/06-colors/color-row.jpg" alt="" />
+      </div>
+    </div>
+
   </section>
 
   <!-- ── TYPOGRAPHY ── -->
