@@ -55,7 +55,7 @@
     }
 
     .sidebar::-webkit-scrollbar { width: 3px; }
-    .sidebar::-webkit-scrollbar-thumb { background: rgba(126,16,212,0.2); border-radius: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 4px; }
 
     .sb-header {
       display: flex;
@@ -63,7 +63,7 @@
       align-items: flex-start;
       gap: 6px;
       padding: 0 24px 20px;
-      border-bottom: 1px solid #EAE0F8;
+      border-bottom: 1px solid #E5E5E5;
       margin-bottom: 8px;
     }
 
@@ -123,7 +123,7 @@
     .section {
       padding: 80px 72px;
       background: var(--white);
-      border-bottom: 1px solid #EAE0F8;
+      border-bottom: 1px solid #E5E5E5;
     }
 
     .section.alt { background: var(--white); }
@@ -290,7 +290,7 @@
     .logo-combo-card {
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid #EAE0F8;
+      border: 1.5px solid #E5E5E5;
     }
 
     .logo-combo-box {
@@ -373,7 +373,7 @@
     .color-card {
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid #EAE0F8;
+      border: 1.5px solid #E5E5E5;
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
       user-select: none;
@@ -395,7 +395,7 @@
     /* ─── GRADIENTS ─────────────────────────────────────────────── */
     .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
 
-    .grad-card { border-radius: 14px; overflow: hidden; border: 1.5px solid #EAE0F8; }
+    .grad-card { border-radius: 14px; overflow: hidden; border: 1.5px solid #E5E5E5; }
 
     .grad-bar { height: 72px; }
 
@@ -407,7 +407,7 @@
 
     /* ─── TYPOGRAPHY ─────────────────────────────────────────────── */
     .type-card {
-      border: 1.5px solid #EAE0F8;
+      border: 1.5px solid #E5E5E5;
       border-radius: 16px;
       padding: 36px;
       background: var(--grey01);
@@ -456,7 +456,7 @@
       font-size: 12px;
       font-weight: 600;
       color: rgba(30,11,58,0.35);
-      border-top: 1px solid #EAE0F8;
+      border-top: 1px solid #E5E5E5;
       padding-top: 14px;
       margin-top: 18px;
     }
@@ -501,7 +501,7 @@
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      border: 1.5px solid #EAE0F8;
+      border: 1.5px solid #E5E5E5;
       margin-top: 36px;
     }
 
@@ -514,7 +514,7 @@
       letter-spacing: 1.2px;
       color: rgba(30,11,58,0.4);
       background: var(--grey01);
-      border-bottom: 1.5px solid #EAE0F8;
+      border-bottom: 1.5px solid #E5E5E5;
     }
 
     .tone-table td {
@@ -623,15 +623,13 @@
     .strip-wrap {
       overflow: hidden;
       width: 100%;
-      height: 280px;
+      border-radius: 16px;
     }
 
     .strip {
       display: block;
       width: 110%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      height: auto;
       will-change: transform;
       transform: translateX(-5%);
     }
@@ -829,7 +827,6 @@
         margin-right: -20px;
       }
 
-      .strip-wrap { height: 180px; }
 
       .welcome-hero img { height: 420px; }
 
@@ -973,16 +970,17 @@
   <!-- ── LOGO ── -->
   <section id="logo" class="section">
     <div class="s-title">Logo</div>
-    <p class="s-lead">Our logo, logotype and logomark, should never be altered or modified in any way. It may only appear in Purple Haze or white—no other colors are permitted. The logotype should never be outlined, stylized, or adjusted, and must always appear as a single, unified color without being divided or separated.</p>
 
     <div class="grid-2 mt-sm">
       <div class="cb">
         <h3>Logotype</h3>
-        <p>The wordmark — <strong>homebase</strong> in lowercase — is our primary logo. Use Purple Haze on light backgrounds, White on dark backgrounds. No other colors, ever.</p>
+        <p>This is our primary logo. It should lead all high-visibility and external-facing communications, ensuring strong brand presence and recognition.</p>
+        <p style="margin-top:12px;">Use the logotype across: email, print, advertising, social content, and paid marketing campaigns. For someone encountering our brand for the first time, the logotype establishes who we are.</p>
       </div>
       <div class="cb">
         <h3>Logomark</h3>
-        <p>The <strong>h</strong> icon is reserved for small spaces and app icons only. Never use it alongside the logotype — it's a standalone symbol for contexts where the full wordmark won't fit.</p>
+        <p>Our secondary logo is used selectively. The logomark functions as a simplified brand identifier, ideal for small spaces and places where the logotype is impractical.</p>
+        <p style="margin-top:12px;">Appropriate uses include the app icon, social profile icons, and specific in-product experiences. It should never replace the logotype in broader brand communication.</p>
       </div>
     </div>
 
@@ -1028,6 +1026,13 @@
         </div>
         <div class="logo-combo-caption">White on Purple Haze</div>
       </div>
+    </div>
+
+    <div class="do-dont mt" style="background:#F4F4F4; border-radius:16px; padding:28px 32px;">
+      <p style="font-size:15px; font-weight:600; color:var(--deep); margin-bottom:6px;">Usage rules</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65); margin-bottom:6px;">Our logo, logotype and logomark, should never be altered or modified in any way. It may only appear in Purple Haze or white — no other colors are permitted.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65); margin-bottom:6px;">The logotype should never be outlined, stylized, or adjusted, and must always appear as a single, unified color without being divided or separated.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65);">The logotype and logomark should not be used together; always choose one or the other based on the context.</p>
     </div>
 
     <div class="do-dont mt">
@@ -1150,7 +1155,7 @@
         </div>
       </div>
       <div class="color-card" onclick="copyHex('#FFFFFF')" style="border-color:#D8D0F0;">
-        <div class="cc-swatch" style="background:#FFFFFF; border-bottom:1px solid #EAE0F8;"></div>
+        <div class="cc-swatch" style="background:#FFFFFF; border-bottom:1px solid #E5E5E5;"></div>
         <div class="cc-info">
           <div class="cc-name">White Stripes</div>
           <div class="cc-hex">#FFFFFF</div>
@@ -1186,7 +1191,7 @@
         </div>
       </div>
       <div class="color-card" onclick="copyHex('#FBFBFB')" style="border-color:#D8D0F0;">
-        <div class="cc-swatch" style="background:#FBFBFB; border-bottom:1px solid #EAE0F8;"></div>
+        <div class="cc-swatch" style="background:#FBFBFB; border-bottom:1px solid #E5E5E5;"></div>
         <div class="cc-info">
           <div class="cc-name">Grey 01</div>
           <div class="cc-hex">#FBFBFB</div>
