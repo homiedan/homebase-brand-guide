@@ -849,11 +849,11 @@
     .strip-wrap {
       overflow: hidden;
       width: 100%;
-      cursor: grab;
+      cursor: ew-resize;
       user-select: none;
     }
 
-    .strip-wrap:active { cursor: grabbing; }
+    .strip-wrap:active { cursor: ew-resize; }
 
     .strip {
       display: block;
@@ -989,7 +989,18 @@
     @media (max-width: 768px) {
       body { display: block; }
 
-      #mobile-topbar { display: flex; }
+      #mobile-topbar {
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      #mobile-topbar.visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
 
       footer { padding: 48px 24px !important; margin-left: 0 !important; }
 
@@ -1058,7 +1069,7 @@
 
       .cover-logo { height: 22px; width: auto; }
 
-      #cover { padding: 120px 28px 80px 40px; margin-left: 0; }
+      #cover { padding: 48px 28px 52px 28px; margin-left: 0; min-height: 360px; }
 
       .sb-link {
         font-size: 18px;
@@ -2776,7 +2787,7 @@ window.addEventListener('touchmove', e => {
 
 // Release + momentum decay
 function releaseWithMomentum(wrap, vel) {
-  if (wrap) wrap.style.cursor = 'grab';
+  if (wrap) wrap.style.cursor = 'ew-resize';
   const state = stripStates.get(wrap);
   if (!state) return;
   const decay = () => {
@@ -2840,10 +2851,13 @@ document.querySelectorAll('.sb-link').forEach(link => {
 // ── SIDEBAR HEADER REVEAL ON SCROLL ──────────────────────────────────────────
 // Shows logo + "Brand Guidelines" in the sidebar once the hero is out of view
 const coverSection = document.getElementById('cover');
+const mobileTopbar = document.getElementById('mobile-topbar');
 if (coverSection) {
   const coverObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      sidebar.classList.toggle('scrolled', !e.isIntersecting);
+      const past = !e.isIntersecting;
+      sidebar.classList.toggle('scrolled', past);
+      if (mobileTopbar) mobileTopbar.classList.toggle('visible', past);
     });
   }, { threshold: 0 });
   coverObserver.observe(coverSection);
