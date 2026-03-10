@@ -260,6 +260,10 @@
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 48px 32px;
     }
+    .photo-rule-card {
+      display: flex;
+      flex-direction: column;
+    }
     .photo-rule-card > img {
       width: 100%;
       display: block;
@@ -288,12 +292,15 @@
     .prc-watch strong { color: #C07800; }
     .prc-info strong { color: rgba(30,11,58,0.45); }
     .prc-examples {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 16px;
+      margin-top: auto;
+      padding-top: 12px;
     }
     .prc-examples img {
       display: block;
+      grid-column: 2;
       height: 110px;
       width: auto;
       max-width: 100%;
@@ -1174,6 +1181,103 @@
         height: 52px;
       }
     }
+
+    /* ─── LOGO SHOWCASE ──────────────────────────────────────── */
+    .logo-showcase {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+      margin-bottom: 52px;
+    }
+    .logo-showcase-hero {
+      background: #F6F6F6;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 160px 12%;
+    }
+    .logo-showcase-hero svg {
+      width: 42%;
+      max-width: 360px;
+      height: auto;
+      display: block;
+    }
+    .logo-showcase-row {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 16px;
+    }
+    .logo-showcase-card {
+      border-radius: 20px;
+      min-height: 280px;
+      padding: 36px 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .logo-showcase-card--purple {
+      background: #7E3DD4;
+    }
+    .logo-showcase-card--purple svg {
+      width: 52%;
+      max-width: 200px;
+      height: auto;
+      display: block;
+    }
+    .logo-showcase-card--light {
+      background: #F6F6F6;
+    }
+    /* App icon: 1:1 purple rounded square with white h inside */
+    .hb-app-icon {
+      background: #7E3DD4;
+      border-radius: 22px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hb-app-icon svg {
+      height: 56px;
+      width: auto;
+      color: #fff;
+    }
+    .logo-showcase-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .logo-showcase-card--purple .logo-showcase-label {
+      color: rgba(255,255,255,0.4);
+    }
+    .logo-showcase-card--light .logo-showcase-label {
+      color: rgba(30,11,58,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .logo-showcase-row {
+        grid-template-columns: 1fr;
+      }
+      .logo-showcase-hero {
+        padding: 72px 8%;
+      }
+      .logo-showcase-hero svg {
+        width: 68%;
+      }
+      .logo-showcase-card {
+        min-height: 220px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1319,6 +1423,27 @@
   <!-- ── LOGO ── -->
   <section id="logo" class="section">
     <div class="s-title">Logo</div>
+
+    <!-- Logo showcase grid -->
+    <div class="logo-showcase">
+      <!-- Top: logotype on light -->
+      <div class="logo-showcase-hero">
+        <svg viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg" style="color:#7E3DD4;"><use href="#hb-logo"/></svg>
+      </div>
+      <!-- Bottom row: logotype on purple + logomark -->
+      <div class="logo-showcase-row">
+        <div class="logo-showcase-card logo-showcase-card--purple">
+          <svg viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg" style="color:#fff;"><use href="#hb-logo"/></svg>
+          <span class="logo-showcase-label">Logotype</span>
+        </div>
+        <div class="logo-showcase-card logo-showcase-card--light">
+          <div class="hb-app-icon">
+            <svg viewBox="0 0 97.68 140.51" xmlns="http://www.w3.org/2000/svg"><use href="#hb-mark"/></svg>
+          </div>
+          <span class="logo-showcase-label">Logomark</span>
+        </div>
+      </div>
+    </div>
 
     <div class="grid-2 mt-sm">
       <div class="cb">
@@ -2027,7 +2152,6 @@
         </div>
         <div class="prc-examples">
           <img src="brand-assets/11-photography/awkward-comp-1.webp" alt="" />
-          <img src="brand-assets/11-photography/awkward-comp-2.webp" alt="" />
         </div>
       </div>
 
