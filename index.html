@@ -187,7 +187,6 @@
     #cover {
       padding: 100px 72px 96px calc(72px + var(--nav-w));
       margin-left: calc(-1 * var(--nav-w));
-      background: url('bg-img.webp') center/cover no-repeat;
       background-color: var(--deep);
       border-bottom: none;
       position: relative;
@@ -196,6 +195,23 @@
       flex-direction: column;
       justify-content: space-between;
       min-height: 520px;
+    }
+
+    /* Shader canvas container — fills hero behind all content */
+    #cover-shader {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    #cover-shader canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    /* Keep cover content above the canvas */
+    .cover-logo, .cover-body {
+      position: relative;
+      z-index: 1;
     }
 
 
@@ -1366,6 +1382,7 @@
 
   <!-- ── COVER ── -->
   <section id="cover">
+    <div id="cover-shader" aria-hidden="true"></div>
     <svg class="cover-logo" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
     <div class="cover-body">
       <div class="cover-title">Homebase Brand Guidelines</div>
@@ -2856,6 +2873,34 @@ if (coverSection) {
     });
   });
 })();
+</script>
+
+<!-- ── GRAIN GRADIENT SHADER (Paper Design) ──────────────────────────────── -->
+<script type="module">
+import {
+  ShaderMount,
+  grainGradientFragmentShader,
+  getShaderColorFromString,
+  GrainGradientShapes
+} from 'https://esm.sh/@paper-design/shaders';
+
+const parent = document.getElementById('cover-shader');
+if (parent) {
+  const uniforms = {
+    u_colorBack:   getShaderColorFromString('#1f0b3c'),
+    u_colors:      ['#d5c7ff', '#803fd5'].map(c => getShaderColorFromString(c)),
+    u_colorsCount: 2,
+    u_softness:    0.96,
+    u_intensity:   0.15,
+    u_noise:       0.05,
+    u_shape:       GrainGradientShapes.corners,
+    u_scale:       1.96,
+    u_rotation:    16,
+    u_offsetX:     0.8,
+    u_offsetY:     -0.12,
+  };
+  new ShaderMount(parent, grainGradientFragmentShader, uniforms, undefined, 1.04);
+}
 </script>
 
 </body>
