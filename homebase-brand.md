@@ -107,18 +107,24 @@ Gradient rules: Never full-page backgrounds. Accent and element use only. Apply 
 
 ## TYPOGRAPHY
 
-### Display: Druk Bold
-- Size: 164pt · Line height: 86% · Always uppercase
-- Use: H1s, campaign headlines, presentation titles, any moment needing maximum impact
-- **Functional** (readability): Druk Bold only
-- **Expressive** (artistic/creative): Any Druk weight — Condensed, Wide — for visual expression
-- ⚠️ Druk Condensed and Wide are expressive only, never for functional/readable text
+We use two fonts. **Plus Jakarta Sans is the primary, everyday font** — use it by default for almost everything. **Druk is the display font** — reserved for high-impact headline moments. When in doubt, use Plus Jakarta Sans.
 
-### Workhorse: Plus Jakarta Sans
+### Workhorse: Plus Jakarta Sans ← USE THIS BY DEFAULT
+- Google Font: https://fonts.google.com/specimen/Plus+Jakarta+Sans
 - **Headlines:** Extra Bold · 112pt · 92% line height · -2 tracking
 - **Campaign headlines:** 48pt · -2 tracking
 - **Body copy:** Medium · 16pt · 170% line height
 - Use Medium (not Regular) — naturally lighter structure needs the weight for readability
+- ⚠️ **Never set Plus Jakarta Sans in all caps** unless explicitly asked. It is a mixed-case font.
+
+### Display: Druk ← USE ONLY WHEN SPECIFICALLY REQUESTED
+- Font files (licensed): https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0
+- Size: 164pt · Line height: 86%
+- **Druk is ALWAYS uppercase.** No exceptions.
+- Use: H1s, campaign headlines, presentation titles, any moment needing maximum impact
+- **Functional** (readability): Druk Bold only
+- **Expressive** (artistic/creative): Any Druk weight — Condensed, Wide — for visual expression
+- ⚠️ Druk Condensed and Wide are expressive only, never for functional/readable text
 
 ---
 
