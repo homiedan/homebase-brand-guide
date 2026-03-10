@@ -162,9 +162,9 @@
     .section.dark .s-title { color: white; }
 
     .s-lead {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: 500;
-      line-height: 1.65;
+      line-height: 1.45;
       color: rgba(30,11,58,0.65);
       max-width: 600px;
       margin-bottom: 52px;
@@ -308,10 +308,10 @@
     }
 
     .cb p {
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 500;
-      line-height: 1.7;
-      color: rgba(30,11,58,0.62);
+      line-height: 1.45;
+      color: rgba(30,11,58,0.65);
     }
 
     /* ─── PAGES GALLERY ─────────────────────────────────────────── */
@@ -454,6 +454,10 @@
 
     .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
 
+    /* Secondary shades + grays: smaller swatch height to match each other */
+    .color-grid--shades .cc-swatch { height: 80px; }
+    .color-grid--shades + .color-grid--shades { margin-top: 28px; }
+
     .color-card {
       border-radius: 14px;
       overflow: hidden;
@@ -472,9 +476,9 @@
 
     .cc-name { font-size: 13px; font-weight: 700; color: var(--deep); margin-bottom: 3px; }
 
-    .cc-hex { font-size: 11px; font-weight: 600; color: rgba(30,11,58,0.4); font-family: 'Courier New', monospace; }
+    .cc-hex { font-size: 11px; font-weight: 500; color: rgba(30,11,58,0.4); font-family: 'Plus Jakarta Sans', sans-serif; }
 
-    .cc-note { font-size: 11px; font-weight: 500; color: rgba(30,11,58,0.35); margin-top: 3px; line-height: 1.4; }
+    .cc-note { font-size: 11px; font-weight: 500; font-family: 'Plus Jakarta Sans', sans-serif; color: rgba(30,11,58,0.35); margin-top: 3px; line-height: 1.4; }
 
     .step-family-name {
       font-size: 12px;
@@ -781,7 +785,7 @@
     .color-intro p {
       font-size: 15px;
       font-weight: 500;
-      line-height: 1.7;
+      line-height: 1.45;
       color: rgba(30,11,58,0.65);
       margin-bottom: 8px;
     }
@@ -1161,6 +1165,14 @@
       .color-use-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      /* Secondary shades + grays: 2-column grid on mobile, like gradients */
+      .color-grid--shades {
+        grid-template-columns: 1fr 1fr;
+      }
+      .color-grid--shades .cc-swatch {
+        height: 52px;
+      }
     }
   </style>
 </head>
@@ -1367,9 +1379,9 @@
 
     <div class="do-dont mt" style="background:#F4F4F4; border-radius:16px; padding:28px 32px; display:block;">
       <p style="font-size:15px; font-weight:600; color:var(--deep); margin-bottom:6px;">Usage rules</p>
-      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65); margin-bottom:6px;">Our logo, logotype and logomark, should never be altered or modified in any way. It may only appear in Purple Haze or white — no other colors are permitted.</p>
-      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65); margin-bottom:6px;">The logotype should never be outlined, stylized, or adjusted, and must always appear as a single, unified color without being divided or separated.</p>
-      <p style="font-size:15px; font-weight:500; line-height:1.7; color:rgba(30,11,58,0.65);">The logotype and logomark should not be used together; always choose one or the other based on the context.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); margin-bottom:6px;">Our logo, logotype and logomark, should never be altered or modified in any way. It may only appear in Purple Haze or white — no other colors are permitted.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); margin-bottom:6px;">The logotype should never be outlined, stylized, or adjusted, and must always appear as a single, unified color without being divided or separated.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65);">The logotype and logomark should not be used together; always choose one or the other based on the context.</p>
     </div>
 
     <div class="do-dont mt">
@@ -1568,108 +1580,100 @@
     <!-- Secondary Shades -->
     <div class="swatch-label">Secondary Shades</div>
 
-    <p class="step-family-name">Purple Rain</p>
-    <div class="color-grid">
+    <div class="color-grid color-grid--shades">
       <div class="color-card" onclick="copyHex('#9A84E6')">
-        <div class="cc-swatch" style="background:#9A84E6; height:80px;"></div>
+        <div class="cc-swatch" style="background:#9A84E6;"></div>
         <div class="cc-info"><div class="cc-name">Purple Rain 400</div><div class="cc-hex">#9A84E6</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#B8A6F2')">
-        <div class="cc-swatch" style="background:#B8A6F2; height:80px;"></div>
+        <div class="cc-swatch" style="background:#B8A6F2;"></div>
         <div class="cc-info"><div class="cc-name">Purple Rain 300</div><div class="cc-hex">#B8A6F2</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#D5C7FF')">
-        <div class="cc-swatch" style="background:#D5C7FF; height:80px;"></div>
+        <div class="cc-swatch" style="background:#D5C7FF;"></div>
         <div class="cc-info"><div class="cc-name">Purple Rain</div><div class="cc-hex">#D5C7FF</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#E7DFFF')">
-        <div class="cc-swatch" style="background:#E7DFFF; height:80px;"></div>
+        <div class="cc-swatch" style="background:#E7DFFF;"></div>
         <div class="cc-info"><div class="cc-name">Purple Rain 100</div><div class="cc-hex">#E7DFFF</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#F3EFFF')">
-        <div class="cc-swatch" style="background:#F3EFFF; height:80px;"></div>
+        <div class="cc-swatch" style="background:#F3EFFF;"></div>
         <div class="cc-info"><div class="cc-name">Purple Rain 50</div><div class="cc-hex">#F3EFFF</div></div>
       </div>
     </div>
 
-    <p class="step-family-name">Yellowcard</p>
-    <div class="color-grid">
+    <div class="color-grid color-grid--shades">
       <div class="color-card" onclick="copyHex('#8FA800')">
-        <div class="cc-swatch" style="background:#8FA800; height:80px;"></div>
+        <div class="cc-swatch" style="background:#8FA800;"></div>
         <div class="cc-info"><div class="cc-name">Yellowcard 500</div><div class="cc-hex">#8FA800</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#BBD600')">
-        <div class="cc-swatch" style="background:#BBD600; height:80px;"></div>
+        <div class="cc-swatch" style="background:#BBD600;"></div>
         <div class="cc-info"><div class="cc-name">Yellowcard 300</div><div class="cc-hex">#BBD600</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#E0FF00')">
-        <div class="cc-swatch" style="background:#E0FF00; height:80px;"></div>
+        <div class="cc-swatch" style="background:#E0FF00;"></div>
         <div class="cc-info"><div class="cc-name">Yellowcard</div><div class="cc-hex">#E0FF00</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#EFFF79')">
-        <div class="cc-swatch" style="background:#EFFF79; height:80px;"></div>
+        <div class="cc-swatch" style="background:#EFFF79;"></div>
         <div class="cc-info"><div class="cc-name">Yellowcard 100</div><div class="cc-hex">#EFFF79</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#F8FFCC')">
-        <div class="cc-swatch" style="background:#F8FFCC; height:80px;"></div>
+        <div class="cc-swatch" style="background:#F8FFCC;"></div>
         <div class="cc-info"><div class="cc-name">Yellowcard 50</div><div class="cc-hex">#F8FFCC</div></div>
       </div>
     </div>
 
-    <p class="step-family-name">Pink Floyd</p>
-    <div class="color-grid">
+    <div class="color-grid color-grid--shades">
       <div class="color-card" onclick="copyHex('#C438A3')">
-        <div class="cc-swatch" style="background:#C438A3; height:80px;"></div>
+        <div class="cc-swatch" style="background:#C438A3;"></div>
         <div class="cc-info"><div class="cc-name">Pink Floyd 400</div><div class="cc-hex">#C438A3</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#CF44B8')">
-        <div class="cc-swatch" style="background:#CF44B8; height:80px;"></div>
+        <div class="cc-swatch" style="background:#CF44B8;"></div>
         <div class="cc-info"><div class="cc-name">Pink Floyd 300</div><div class="cc-hex">#CF44B8</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#E55CCD')">
-        <div class="cc-swatch" style="background:#E55CCD; height:80px;"></div>
+        <div class="cc-swatch" style="background:#E55CCD;"></div>
         <div class="cc-info"><div class="cc-name">Pink Floyd</div><div class="cc-hex">#E55CCD</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#F2A6E6')">
-        <div class="cc-swatch" style="background:#F2A6E6; height:80px;"></div>
+        <div class="cc-swatch" style="background:#F2A6E6;"></div>
         <div class="cc-info"><div class="cc-name">Pink Floyd 100</div><div class="cc-hex">#F2A6E6</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#FBE6F5')">
-        <div class="cc-swatch" style="background:#FBE6F5; height:80px;"></div>
+        <div class="cc-swatch" style="background:#FBE6F5;"></div>
         <div class="cc-info"><div class="cc-name">Pink Floyd 50</div><div class="cc-hex">#FBE6F5</div></div>
       </div>
     </div>
 
     <!-- Grays -->
     <div class="swatch-label">Grays</div>
-    <div class="color-grid">
+    <div class="color-grid color-grid--shades">
       <div class="color-card" onclick="copyHex('#FBFBFB')">
         <div class="cc-swatch" style="background:#FBFBFB; border-bottom:1px solid #E5E5E5;"></div>
         <div class="cc-info">
-          <div class="cc-name">Grey 01</div>
+          <div class="cc-name">Gray 01</div>
           <div class="cc-hex">#FBFBFB</div>
-          <div class="cc-note">Near-white background</div>
-          <div class="cc-specs">
-            <div class="cc-spec"><span class="cc-spec-label">CMYK</span>0 · 0 · 0 · 2</div>
-            <div class="cc-spec"><span class="cc-spec-label">RGB</span>251 · 251 · 251</div>
-          </div>
         </div>
       </div>
       <div class="color-card" onclick="copyHex('#F6F6F6')">
         <div class="cc-swatch" style="background:#F6F6F6; border-bottom:1px solid #E5E5E5;"></div>
-        <div class="cc-info"><div class="cc-name">Grey 02</div><div class="cc-hex">#F6F6F6</div></div>
+        <div class="cc-info"><div class="cc-name">Gray 02</div><div class="cc-hex">#F6F6F6</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#EFEFEF')">
         <div class="cc-swatch" style="background:#EFEFEF; border-bottom:1px solid #E5E5E5;"></div>
-        <div class="cc-info"><div class="cc-name">Grey 03</div><div class="cc-hex">#EFEFEF</div></div>
+        <div class="cc-info"><div class="cc-name">Gray 03</div><div class="cc-hex">#EFEFEF</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#E7E7E7')">
         <div class="cc-swatch" style="background:#E7E7E7; border-bottom:1px solid #E5E5E5;"></div>
-        <div class="cc-info"><div class="cc-name">Grey 04</div><div class="cc-hex">#E7E7E7</div></div>
+        <div class="cc-info"><div class="cc-name">Gray 04</div><div class="cc-hex">#E7E7E7</div></div>
       </div>
       <div class="color-card" onclick="copyHex('#AAAAAA')">
         <div class="cc-swatch" style="background:#AAAAAA;"></div>
-        <div class="cc-info"><div class="cc-name">Grey 05</div><div class="cc-hex">#AAAAAA</div></div>
+        <div class="cc-info"><div class="cc-name">Gray 05</div><div class="cc-hex">#AAAAAA</div></div>
       </div>
     </div>
 
@@ -1754,7 +1758,7 @@
   <!-- ── TYPOGRAPHY ── -->
   <section id="typography" class="section">
     <div class="s-title">Typography</div>
-    <p style="font-size:15px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:560px; margin-bottom:36px;"><strong style="color:var(--deep);">Druk</strong> — We use Druk Bold and Druk Bold Italic for impactful, high-energy moments. Druk Bold can serve a purely functional purpose in titles or take on a more expressive role when paired with other Druk weights and sizes.</p>
+    <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:600px; margin-bottom:36px;"><strong style="color:var(--deep);">Druk</strong> — We use Druk Bold and Druk Bold Italic for impactful, high-energy moments. Druk Bold can serve a purely functional purpose in titles or take on a more expressive role when paired with other Druk weights and sizes.</p>
 
     <!-- Display: Druk -->
     <div class="type-card">
@@ -1766,7 +1770,7 @@
 
     <!-- How we use Druk -->
     <div class="cb mt" style="max-width:600px;">
-      <p style="font-size:15px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65);">Druk is a core part of our brand voice, and we use it in two ways: functional and expressive.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65);">Druk is a core part of our brand voice, and we use it in two ways: functional and expressive.</p>
     </div>
 
     <div class="grid-2 mt-sm">
@@ -1787,7 +1791,7 @@
 
     <div class="do-dont mt-sm" style="background:#F4F4F4; border-radius:16px; padding:28px 32px; display:block; margin-bottom:0;">
       <p style="font-size:15px; font-weight:600; color:var(--deep); margin-bottom:8px;">What Not to Do</p>
-      <p style="font-size:15px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:580px;">While Druk Condensed and Wide styles are great for expression, they should never be used functionally. Their proportions reduce legibility, making them unsuitable for headlines that must be read quickly and clearly.</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:580px;">While Druk Condensed and Wide styles are great for expression, they should never be used functionally. Their proportions reduce legibility, making them unsuitable for headlines that must be read quickly and clearly.</p>
     </div>
     <div class="mt-sm"><img src="brand-assets/07-type/druk-function-versus-expressive.webp" alt="Druk functional vs expressive use" style="width:100%; display:block;" /></div>
 
@@ -1795,7 +1799,7 @@
     <hr style="border:none; border-top:1px solid #E5E5E5; margin:56px 0;" />
 
     <!-- Primary / Workhorse: Plus Jakarta -->
-    <p style="font-size:15px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:560px; margin-bottom:36px;"><strong style="color:var(--deep);">Plus Jakarta Sans</strong> — Plus Jakarta is our primary, hardworking typeface for both headlines and body copy. We use Extra Bold for headlines and Medium for body copy. Because Plus Jakarta has a naturally lighter structure, Medium provides better readability than Regular in most cases, though small exceptions may occur.</p>
+    <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:600px; margin-bottom:36px;"><strong style="color:var(--deep);">Plus Jakarta Sans</strong> — Plus Jakarta is our primary, hardworking typeface for both headlines and body copy. We use Extra Bold for headlines and Medium for body copy. Because Plus Jakarta has a naturally lighter structure, Medium provides better readability than Regular in most cases, though small exceptions may occur.</p>
     <div class="type-card">
       <div class="type-tag">Primary / Workhorse</div>
       <div class="t-jakarta-xl">Run your team.<br>Grow your business.</div>
@@ -1904,7 +1908,7 @@
   <section id="backgrounds" class="section">
     <div class="s-title">Backgrounds</div>
     <p class="s-lead">We use a range of background styles—from textured and dynamic to clean, simple white or purple fields. Regardless of the style, backgrounds should always support the content placed on top of them.</p>
-    <p style="font-size:18px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:600px; margin-top:20px;">They should never overpower the artwork or typography, but instead complement and balance it, ensuring the message remains clear and visually accessible.</p>
+    <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:600px; margin-top:20px;">They should never overpower the artwork or typography, but instead complement and balance it, ensuring the message remains clear and visually accessible.</p>
 
     <div class="mt">
       <img src="brand-assets/09-backgrounds/backgrounds-example.webp" alt="Background styles example" style="width:100%; display:block;" />
@@ -1948,8 +1952,8 @@
   <section id="photography" class="section">
     <div class="s-title">Photography</div>
     <p class="s-lead">Our photography celebrates the people who make small businesses run: owners, employees, and teams.</p>
-    <p style="font-size:18px; font-weight:600; line-height:1.65; color:rgba(30,11,58,0.85); max-width:600px; margin-top:24px; margin-bottom:6px;">Overall</p>
-    <p style="font-size:18px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:600px; margin:0;">We want people to look natural. We want to show them as everyday heroes who are relatable and inspiring. They should be candid, warm, and friendly.</p>
+    <p style="font-size:15px; font-weight:600; line-height:1.45; color:rgba(30,11,58,0.85); max-width:600px; margin-top:24px; margin-bottom:6px;">Overall</p>
+    <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:600px; margin:0;">We want people to look natural. We want to show them as everyday heroes who are relatable and inspiring. They should be candid, warm, and friendly.</p>
 
     <div class="welcome-strips mt">
       <div class="strip-wrap" data-scale="1.5">
@@ -1960,7 +1964,7 @@
       </div>
     </div>
 
-    <p class="mt" style="font-size:18px; line-height:1.6; max-width:600px;">Here are a few things to keep in mind when using photography, or on a photoshoot to capture new images.</p>
+    <p class="mt" style="font-size:15px; line-height:1.45; max-width:600px;">Here are a few things to keep in mind when using photography, or on a photoshoot to capture new images.</p>
 
     <div class="photo-grid mt-sm">
 
@@ -2221,7 +2225,7 @@
 
     <div class="mt">
       <p style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:40px; line-height:1.0; letter-spacing:-0.02em; color:var(--deep); margin:0 0 16px;">Tone</p>
-      <p style="font-size:18px; font-weight:500; line-height:1.65; color:rgba(30,11,58,0.65); max-width:600px; margin:0 0 40px;">Our voice is constant. Our <strong style="color:var(--deep);">tone</strong> is how we can adjust our voice for specific moments across the customer journey:</p>
+      <p style="font-size:15px; font-weight:500; line-height:1.45; color:rgba(30,11,58,0.65); max-width:600px; margin:0 0 40px;">Our voice is constant. Our <strong style="color:var(--deep);">tone</strong> is how we can adjust our voice for specific moments across the customer journey:</p>
 
       <div class="tone-grid">
 
@@ -2328,13 +2332,13 @@
   <section id="gallery" class="section alt">
     <div class="s-title">Gallery</div>
     <div class="welcome-strips mt">
-      <div class="strip-wrap" data-scale="1.75">
+      <div class="strip-wrap" data-scale="1.75" data-mobile-scale="3">
         <img class="strip" id="strip-gallery-1" src="brand-assets/13-gallery/gallery-row-1.webp" alt="" />
       </div>
-      <div class="strip-wrap" data-scale="1.75">
+      <div class="strip-wrap" data-scale="1.75" data-mobile-scale="3">
         <img class="strip" id="strip-gallery-2" src="brand-assets/13-gallery/gallery-row-2-big.webp" alt="" />
       </div>
-      <div class="strip-wrap" data-scale="1.75">
+      <div class="strip-wrap" data-scale="1.75" data-mobile-scale="3">
         <img class="strip" id="strip-gallery-3" src="brand-assets/13-gallery/gallery-row-3.webp" alt="" />
       </div>
     </div>
@@ -2492,9 +2496,12 @@ function initInfiniteStrips() {
     const wrapW = wrap.offsetWidth || window.innerWidth;
 
     // Always width-based: images render at natural height, zero cropping.
-    // data-scale only applies on desktop so mobile always shows natural size.
+    // On mobile, data-mobile-scale controls how wide the tile is vs the viewport.
+    // A scale > 1 makes the tile wider than the screen, which increases visible height.
     const isMobile = window.innerWidth <= 768;
-    const scale = isMobile ? 1 : (parseFloat(wrap.dataset.scale) || 1);
+    const scale = isMobile
+      ? (parseFloat(wrap.dataset.mobileScale) || 2.5)
+      : (parseFloat(wrap.dataset.scale) || 1);
     const tileW = Math.round(wrapW * scale);
     const tileStyle = `display:block; flex-shrink:0; width:${tileW}px; height:auto; pointer-events:none;`;
     const trackStyle = `display:flex; gap:${gap}px; will-change:transform; pointer-events:none;`;
