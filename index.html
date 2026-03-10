@@ -975,6 +975,8 @@
 
       #mobile-topbar { display: flex; }
 
+      footer { padding: 48px 24px !important; margin-left: 0 !important; }
+
       .sidebar {
         display: none;
         position: fixed;
@@ -1145,7 +1147,7 @@
     }
     .res-card-name {
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 500;
       line-height: 1.3;
       color: var(--deep);
     }
@@ -1159,6 +1161,26 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* ─── CURSOR TOOLTIP ─────────────────────────────────────── */
+    .res-tooltip {
+      position: fixed;
+      z-index: 9999;
+      background: var(--deep);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      padding: 10px 14px;
+      border-radius: 10px;
+      max-width: 240px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+      white-space: normal;
+    }
+    .res-tooltip.visible { opacity: 1; }
 
     /* Mobile overrides that must come AFTER their desktop counterparts */
     @media (max-width: 768px) {
@@ -2439,7 +2461,7 @@
             </div>
             <div class="tone-bar-row">
               <span class="tone-bar-label">Clear</span>
-              <div class="tone-bar-track"><div class="tone-bar-fill" style="width:65%"></div></div>
+              <div class="tone-bar-track"><div class="tone-bar-fill" style="width:90%"></div></div>
             </div>
             <div class="tone-bar-row">
               <span class="tone-bar-label">Proactive</span>
@@ -2555,14 +2577,13 @@
         </div>
       </a>
 
-      <a class="res-card" href="homebase-brand.md" download="homebase-brand.md">
+      <a class="res-card" href="homebase-brand.md" download="homebase-brand.md" data-tooltip="Download the file, then paste its contents into Claude's Project Instructions to use the Homebase brand with any Claude conversation.">
         <div>
           <div class="res-card-label">Claude AI</div>
           <div class="res-card-name">Homebase brand skill</div>
-          <div style="font-size:11px; font-weight:500; color:rgba(30,11,58,0.4); margin-top:4px; line-height:1.4;">Paste into Claude Project Instructions to use Homebase brand with Claude</div>
         </div>
         <div class="res-card-icon">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 10.5L4.5 7H7V2H9V7H11.5L8 10.5Z" fill="#1E0B3A"/><path d="M2 12H14V14H2V12Z" fill="#1E0B3A"/></svg>
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 10.5L4.5 7H7V2H9V7H11.5L8 10.5Z" fill="#1E0B3A"/><path d="M2 12H14V14H2V12Z" fill="#1E0B3A"/></svg>
         </div>
       </a>
 
@@ -2579,10 +2600,18 @@
     </div>
   </section>
 
+  <footer style="padding: 52px 72px; background:#EBEBEB; margin-left:calc(-1 * var(--nav-w)); display:flex; flex-direction:column; align-items:center; gap:20px;">
+    <svg style="width:120px; height:auto; display:block; overflow:visible; color:#7E3DD4;" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
+    <p style="font-family:'Plus Jakarta Sans',sans-serif; font-size:13px; font-weight:500; color:rgba(30,11,58,0.65); text-align:center; margin:0; line-height:1.5;">Designed by the humans on the Homebase Brand team ✍️ Coded with the helping hand of Claude 🤖</p>
+  </footer>
+
 </main>
 
 <!-- Copy toast notification -->
 <div class="toast" id="toast"></div>
+
+<!-- Cursor tooltip -->
+<div class="res-tooltip" id="res-tooltip"></div>
 
 <script>
 // ── COPY HEX ────────────────────────────────────────────────────────────────
@@ -2802,6 +2831,31 @@ if (coverSection) {
   }, { threshold: 0 });
   coverObserver.observe(coverSection);
 }
+
+// ── CURSOR TOOLTIP ──────────────────────────────────────────────────────────
+(function() {
+  const tip = document.getElementById('res-tooltip');
+  const offset = 16;
+
+  document.querySelectorAll('[data-tooltip]').forEach(el => {
+    el.addEventListener('mouseenter', e => {
+      tip.textContent = el.dataset.tooltip;
+      tip.classList.add('visible');
+    });
+    el.addEventListener('mousemove', e => {
+      let x = e.clientX + offset;
+      let y = e.clientY + offset;
+      // Keep tooltip within viewport
+      if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - offset;
+      if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - offset;
+      tip.style.left = x + 'px';
+      tip.style.top  = y + 'px';
+    });
+    el.addEventListener('mouseleave', () => {
+      tip.classList.remove('visible');
+    });
+  });
+})();
 </script>
 
 </body>
