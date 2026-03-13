@@ -432,8 +432,8 @@ When a grainy gradient background needs to move — for video, motion ads, or an
 This tool produces smooth, organic animated gradients with grain baked in. Configure it using Homebase brand colors and keep motion settings subtle and slow — consistent with our overall motion principles (natural, not noticed).
 
 **Recommended starting point for brand-aligned output:**
-- `colors`: Purple Haze + Purple Rain (`803fd5`, `d5c7ff`)
-- `colorBack`: Deep Purple (`1f0b3c`)
+- `colors`: Purple Haze + Purple Rain (`7E3DD4`, `D5C7FF`)
+- `colorBack`: Deep Purple (`1E0B3A`)
 - `softness`: 0.5
 - `intensity`: 0.5
 - `noise`: 0.25
