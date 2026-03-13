@@ -479,7 +479,7 @@ For marketing assets, the **Small Simplified Product Elements** section is usual
 ### ⚠️ Always Check the Live Awards & Stats Doc
 The Google Doc below is the source of truth for all approved stats and awards. Always use the WebFetch tool to check it before referencing any stats or awards — the list is updated regularly and the doc overrides anything listed in this file.
 
-**Awards & Stats source of truth:** https://docs.google.com/document/d/1vM_gNQ941QrYJHFyWIz1mwvvtUQiiup3qGVOdgQSiXw/edit?usp=sharing
+**Awards & Stats source of truth:** https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit?usp=sharing
 
 The stats and awards below are a snapshot from January 2026. Always verify against the live doc before use.
 
