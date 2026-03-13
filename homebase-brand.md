@@ -450,6 +450,28 @@ Adjust colors and softness per context, but always stay within the brand palette
 - Product UI should feel integrated into real life, not isolated on white
 - Use alongside photography to show the product solving real problems
 
+### Product UI Screen Library
+All product UI screens and simplified product elements live in the **Brandbase — Brand Design System** Figma file. Use these deep links to jump directly to each section:
+
+**Figma file:** [Brandbase — Brand Design System](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System)
+
+| Section | What's inside | Direct link |
+|---|---|---|
+| Full Scale UI — Desktop | Full-size desktop app screens for scheduling, timesheets, payroll, and more | [Open in Figma](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System?node-id=6636-32262) |
+| Full Scale UI — Mobile | Full-size mobile app screens | [Open in Figma](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System?node-id=6635-20193) |
+| Small Simplified Product Elements | Cropped, simplified UI elements for use in marketing assets and ads | [Open in Figma](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System?node-id=6636-32266) |
+| Photography | Approved lifestyle photography showing real small business contexts | [Open in Figma](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System?node-id=6636-32272) |
+| Partner Screens — Clover | Co-branded partner screens for Clover integration contexts | [Open in Figma](https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System?node-id=6640-33004) |
+
+### Exporting Screens for Asset Creation
+To export any screen or element from Figma for use in an asset:
+1. Open the section using a link above
+2. Select the frame or element you want
+3. In the right panel → **Export** → choose PNG (for raster) or SVG (for vector/editable)
+4. Use **2x or 3x** resolution for social and digital assets (retina-ready)
+
+For marketing assets, the **Small Simplified Product Elements** section is usually the right starting point — these are already cropped and sized for use in ads and collateral.
+
 ---
 
 ## STATS, AWARDS & SOCIAL PROOF
