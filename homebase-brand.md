@@ -444,6 +444,59 @@ Adjust colors and softness per context, but always stay within the brand palette
 
 ---
 
+## AD DESIGN
+
+These guidelines apply any time an ad is being created — paid social, organic social, display, OOH, or any other format. When in doubt, do less. A great Homebase ad is clean, confident, and immediately readable.
+
+### Core Principle: Clean and Simple
+Every ad should feel effortless. One clear idea, one clear visual, one clear message. Resist the urge to fill space. Negative space is intentional — it makes what's there hit harder.
+
+### Visual Direction
+Each ad should lead with one of these four visual approaches — not a combination:
+- **Photography** — Real people, real small businesses, real moments
+- **Product UI** — App screens showing the product solving a real problem
+- **Bold type** — The headline *is* the visual. Type-led, nothing else needed.
+- **People + UI** — Photography and product together, showing context and tool in use
+
+Do not mix all four. Pick one direction and commit to it.
+
+### Headline Rules
+- **Always include a big, dominant headline.** This is non-negotiable.
+- **No subhead by default.** Only add a subheadline if it's genuinely needed to complete the message or if specifically requested. When in doubt, leave it out.
+- **Plus Jakarta Sans** — Mixed case only. Never fully capitalize Plus Jakarta Sans unless explicitly asked. It is not an all-caps font.
+- **Druk** — Always uppercase. Use for maximum-impact campaign headline moments.
+- Size headlines generously. As a brand designer would — let the type breathe and dominate. Don't shrink it to fit more copy in.
+
+### Logo
+- **Always include the homebase logo** unless specifically asked to omit it.
+- Sized appropriately — present and legible, but not competing with the headline. It's a signal, not the hero.
+- Follow all standard logo rules: lowercase, approved color combos, no busy backgrounds behind it.
+
+### Decorative Elements — Use Sparingly
+Hand-drawn marks, emojis, stickers, and large icons can add personality, but only when they genuinely add to the ad — not as decoration for its own sake.
+- **1–2 elements max** per ad. If you're considering a third, remove one instead.
+- Each element must earn its place. Ask: does this make the ad better, or just busier?
+- Never let decorative elements compete with the headline or logo.
+- When unsure, leave them out. A clean ad beats a cluttered one every time.
+- ✅ One well-placed sticker · A single large icon for emphasis · An emoji inline with copy
+- ❌ Multiple stickers · Hand-drawn marks + emojis + icons together · Decoration that distracts
+
+### Legibility
+- Every element must be readable at the intended size and distance.
+- Text over photography always gets the warm overlay treatment (R210 G205 B200) or sufficient contrast.
+- Never place light text on a light background or dark text on a dark background without sufficient contrast.
+- Check the logo reads clearly at small sizes — if it doesn't, it's too small.
+
+### What to Avoid
+- Overcrowded layouts — if it feels busy, remove something
+- Long body copy — ads are not the place for explanation
+- All-caps Plus Jakarta Sans (unless explicitly requested)
+- More than 2 secondary brand colors in one ad
+- Gradients as full-background fills
+- Multiple competing focal points
+
+---
+
 ## PRODUCT (APP) DESIGN
 
 - Show Homebase in real-use context — on phones, tablets, laptops in actual small business settings
