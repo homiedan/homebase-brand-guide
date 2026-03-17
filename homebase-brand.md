@@ -444,6 +444,129 @@ Adjust colors and softness per context, but always stay within the brand palette
 
 ---
 
+## ORGANIC SOCIAL
+
+Organic social is where we build real relationships — with customers, communities, and the small businesses we serve. The tone is warmer and more personal than paid ads. We're not selling; we're celebrating. Customer stories, milestones, and moments that show who Homebase is and who uses it.
+
+**Key differences from paid ads:**
+- The customer is the hero, not the product or headline
+- Less copy, more photography and real faces
+- Never a hard sell — always a moment, story, or celebration
+- Captions do more of the work than the visual
+
+---
+
+### Format: Customer Spotlight Carousel
+
+The primary organic social format. A 6-slide carousel that tells the story of one real Homebase customer — their business, their team, and their world. Each customer gets their own carousel.
+
+**Standard format:** 1080×1350 (4:5), Instagram carousel
+
+#### Slide 1 — Cover (Photo + Druk headline)
+- Full-bleed photograph of the business or team
+- Purple gradient overlay at the bottom for text legibility
+- **Druk headline in white** — 2 lines, large, bottom-left aligned. Captures the spirit or ethos of the business in a few words (e.g., "NOURISHING HOSPITALITY", "PRINT YOUR HEART OUT")
+- Business name and city in small white text below the headline — left and right aligned (one on each side)
+- No logo on this slide
+
+#### Slide 2 — Business description (Copy + photo)
+- Top ~40%: white background with body copy in **Purple Haze**, Plus Jakarta Medium, large and left-aligned
+- Bottom ~60%: full-bleed photo
+- Copy describes the business in their own spirit — conversational, specific, real
+- No headline — the copy IS the content
+
+#### Slide 3 — Pure photo
+- Full-bleed candid shot, no text, no branding
+- The most editorial slide — purely documentary
+- Shows the work, the craft, the people in action
+
+#### Slide 4 — Grainy gradient text + photo collage
+- **Textured grainy gradient background** — Purple Haze to Purple Rain, with grain overlay
+- Large **Plus Jakarta ExtraBold text in Purple Rain** — a quote, descriptor, or defining phrase about the business. Type is very large, wraps multiple lines edge-to-edge
+- A small inset photo is collaged into the type — feels embedded in the text, not floating above it
+- No business name, no logo — pure expression
+
+#### Slide 5 — Second story (Copy + photo)
+- Same structure as Slide 2 — white top with Purple Haze copy, photo bottom
+- Continues the narrative from slide 2 — a different angle of the story
+
+#### Slide 6 — Closer (Deep Purple + Druk)
+- **Deep Purple background**
+- **Druk headline** — two lines, stacked:
+  - Line 1: "PROUD TO BE A PART OF" in white
+  - Line 2: "THE TEAM" in Purple Haze
+- Business name and city/state in small Purple Haze text, centered below headline
+- **homebase logo bottom center**, white
+- Clean, warm sign-off for the carousel
+
+---
+
+### Format: Year in Review (Rewind Carousel)
+
+An annual content series celebrating Homebase's year by surfacing platform-wide stats alongside real customer stories. The tone is celebratory and community-focused.
+
+**Standard format:** 1080×1350 (4:5), Instagram carousel
+
+#### Cover slide — "REWIND [YEAR]"
+- **Purple Haze background** (solid, not gradient)
+- **Druk headline** — "REWIND" in massive white type, year integrated into the letterforms or stacked below
+- Year **sticker tags** scattered across the frame at random angles — in Yellowcard, Purple Rain, and Pink Floyd. Each tag is a small rounded rectangle with the year number in deep purple/dark type. Tags vary in angle, size, and color for a playful, scattered feel.
+- Subhead in white Plus Jakarta: "The year in stats from [X]K+ Homebase teams →"
+- No logo on cover
+
+#### Stat slides — each stat gets a pair of slides
+
+**Part A — The number:**
+- **Purple Haze background**
+- **Giant Druk number in white** — fills most of the frame width, top half of the frame
+- **Stat label in Purple Rain** below the number — Plus Jakarta Medium, centered (e.g., "Schedules went out", "Messages & lols shared", "New team members")
+- **Two customer photos** collaged in the lower half — one smaller, clipped in a corner; one larger, slightly tilted/angled, with the business name pill sticker
+- **Business name pill sticker** — white rounded rectangle, business name in all-caps Plus Jakarta, city/state below in smaller text
+- **One emoji in a colored circle** — Yellowcard, Pink Floyd, or white circle, positioned near the stat. The emoji relates to the stat (📅 for schedules, 💬 for messages, 🤝 for swaps)
+
+**Part B — The context:**
+- Identical layout to Part A — same photos, same background, same emoji circle
+- The number is **replaced** with the context phrase: "for every [action]" in white Plus Jakarta (e.g., "for every new schedule published")
+- Pairs with Part A to give the stat full meaning
+
+#### Closer slide — "THANK YOU"
+- Same structure as the Cover slide
+- "THANK YOU" in massive white Druk, centered
+- Year sticker tags scattered in the same style as the cover
+- Warm, no logo
+
+---
+
+### Organic Social Typography Rules
+- **Druk** → Cover and closer headlines, stat numbers. Always uppercase.
+- **Plus Jakarta ExtraBold** → Grainy gradient slides, large display text within carousels
+- **Plus Jakarta Medium** → Body copy and stat context labels. Mixed case, never all-caps.
+- **Business name pills** → Plus Jakarta, all-caps, black on white, small
+- Body copy on white is always **Purple Haze** — never black, never grey
+- Body copy on Purple Haze bg is always **white** or **Purple Rain**
+
+### Organic Social Color Rules
+- Purple Haze is the constant background color for stat and closing slides
+- Deep Purple is used for the carousel's final "closer" slide only
+- Grainy gradient slides use Purple Haze → Purple Rain (never Spectrum gradient on organic social)
+- Emoji circles: Yellowcard, Pink Floyd, or white — one per frame, related to content
+- Year sticker tags: Yellowcard, Purple Rain, Pink Floyd — mixed, scattered
+
+### Organic Social Photography
+- Real customers, real businesses — the exact same people featured in their carousel
+- Candid over posed — in the middle of work, laughing, doing their thing
+- Pure photo slides (Slide 3) have no text or branding — respect the moment
+- Photos are sometimes collaged/tilted as design elements, not always full-bleed
+
+### What Organic Social Is NOT
+- Never a hard product pitch
+- Never feature-list content
+- No CTAs ("Try Homebase free") in the creative — save that for paid
+- Never stock photography
+- Never more than 1 logo appearance per carousel (always on the closer slide)
+
+---
+
 ## AD DESIGN
 
 These guidelines apply any time an ad is being created — paid social, organic social, display, OOH, or any other format. When in doubt, do less. A great Homebase ad is clean, confident, and immediately readable.
@@ -451,49 +574,131 @@ These guidelines apply any time an ad is being created — paid social, organic 
 ### Core Principle: Clean and Simple
 Every ad should feel effortless. One clear idea, one clear visual, one clear message. Resist the urge to fill space. Negative space is intentional — it makes what's there hit harder.
 
-### Visual Direction
-Each ad should lead with one of these four visual approaches — not a combination:
-- **Photography** — Real people, real small businesses, real moments
-- **Product UI** — App screens showing the product solving a real problem
-- **Bold type** — The headline *is* the visual. Type-led, nothing else needed.
-- **People + UI** — Photography and product together, showing context and tool in use
+---
 
-Do not mix all four. Pick one direction and commit to it.
+### Visual Directions
+Each ad should lead with one of these approaches — not a combination. Pick one and commit.
+
+#### 1. Bold Type — The headline IS the visual
+The most common Homebase ad format. No photography, no product UI — just massive type, a clean background, and the logo. Everything else gets out of the way.
+- Use Druk for maximum impact — stacked, line-by-line, very large
+- One background color: white/grey or Deep Purple (no gradients as full bg)
+- Optional: one hand-drawn accent or small qualifier text in a secondary style
+- Examples of this format: "THE EVERYTHING APP", "STOP", "HOURS WAGES TAXES PAYROLL / DONE."
+
+#### 2. Product UI — Show the app solving a real problem
+The product UI is the hero. Show a specific feature in action — not a generic overview.
+- Use a single phone mockup or a cropped UI card — not a full-screen flat screenshot
+- Feature pills (with Spectrum gradient stroke) and sparkle icons (✦) can float alongside
+- Dark or gradient backgrounds work well to make white UI pop
+- The headline, if present, is short and the UI proves it
+
+#### 3. Photography — Real people, real businesses, real moments
+Lead with an authentic moment. The product or headline supports it — never competes.
+- Hand-holding-phone shots are a proven format for showing product in context
+- No headline overlay directly on faces — text lives in a clear zone
+- Logo typically top-right (light bg) or top-right white (dark/photo bg)
+- Feels documentary, not staged
+
+#### 4. People + UI — Combine context and product together
+A person using the product, or UI side-by-side with photography. The most explanatory format — good for "here's how it works" messaging.
+- Split layouts work: photography on one side, type on the other (50/50)
+- Or: feature labels/pills floating near a hand holding the phone
+- Keep it clean — one photo, one UI element, one headline
+
+---
 
 ### Headline Rules
 - **Always include a big, dominant headline.** This is non-negotiable.
 - **No subhead by default.** Only add a subheadline if it's genuinely needed to complete the message or if specifically requested. When in doubt, leave it out.
-- **Plus Jakarta Sans** — Mixed case only. Never fully capitalize Plus Jakarta Sans unless explicitly asked. It is not an all-caps font.
-- **Druk** — Always uppercase. Use for maximum-impact campaign headline moments.
-- Size headlines generously. As a brand designer would — let the type breathe and dominate. Don't shrink it to fit more copy in.
+- **Druk** — Always uppercase. Use for maximum-impact moments. This is the most common headline choice in paid ads.
+- **Plus Jakarta Sans** — Mixed case only. Never set in all caps. Used for softer, more conversational headlines (hiring, features, approachable messages).
+- **Hand-drawn/brush script** — Used as a small secondary qualifier beneath or overlapping the main Druk headline (e.g., "For Hourly Teams" under "THE EVERYTHING APP"). Never the primary headline — always supporting.
+- Size headlines generously. Let the type breathe and dominate the frame.
 
-### Logo
-- **Always include the homebase logo** unless specifically asked to omit it.
-- Sized appropriately — present and legible, but not competing with the headline. It's a signal, not the hero.
-- Follow all standard logo rules: lowercase, approved color combos, no busy backgrounds behind it.
+#### The "Stacked List + Punchline" Pattern
+One of the most effective Homebase ad formats. Stack multiple words or concepts vertically in muted type, then end with the punchline in Purple Haze or a contrasting color:
+- Example: HOURS / WAGES / TAXES / PAYROLL in tan → **DONE.** in Purple Haze
+- The color shift signals the payoff — everything before it is the problem, the last word is the solution
+- Works especially well with Druk — each word fills its own line edge-to-edge
+
+#### Type Color in Headlines
+- White bg or grey bg → Deep Purple Druk or Purple Haze Druk (or mixed within one headline)
+- Deep Purple bg → White Druk (dominant) with Purple Haze or Yellowcard accents
+- Spectrum gradient bg → White Druk only
+- Accent/punchline word → Purple Haze on light bg · Yellowcard on dark bg
+
+---
+
+### Logo Placement
+- **Dark bg or gradient** → logo top-left, white
+- **Light bg (white/grey)** → logo bottom-left or bottom-center, Purple Haze
+- Sized to signal, not compete. Present and legible, but never the hero.
+- Always white on dark backgrounds, always Purple Haze on light backgrounds.
+
+---
+
+### Offer & Promo Treatment
+When an ad includes a promotional offer (e.g., "Get 3 months free"), use a **circular stamp/seal sticker**:
+- Shape: circle or scalloped badge — feels like a real-world stamp
+- **On dark bg ads:** Purple Haze filled circle + Yellowcard text inside
+- **On light bg ads:** Yellowcard filled circle + Deep Purple text inside
+- Optional rotating text around the ring (e.g., "PAYROLL + PLUS PLAN" circling the border)
+- 1 offer sticker max per ad — placed off-center, typically top-left or overlapping a focal element
+- Never make the offer the full-frame visual — it's a sticker on top of the main creative
+
+---
+
+### AI Feature Ads
+When the ad is about an AI-powered Homebase feature (Scheduling Assistant, etc.):
+- **Always use the Spectrum gradient background** (Deep Purple → Purple Haze → Pink Floyd → Yellowcard)
+- **Always use the Sparkle icon (✦)** paired with the AI feature name in the UI
+- Show the actual product UI — a card or partial screen — in the bottom portion of the ad
+- Headline: bold Druk in white, large, stacked in the top portion
+- Logo: top-left, white
+
+---
+
+### Award & Social Proof Ads
+When the ad leads with an award or credential:
+- **Background:** Deep Purple
+- **Headline:** The award statement IS the headline — written in Druk, large, Purple Haze
+- **Qualifier:** Award category (e.g., "for small business") can appear in Yellowcard in a secondary, slightly expressive type style
+- **Attribution:** Award source in small white or light text (e.g., "2024 – CNN Underscored") with an em dash
+- **Decorative element:** Laurel wreath icon in Yellowcard — flanking the qualifier text
+- No photography, no product UI in award-only ads
+
+---
 
 ### Decorative Elements — Use Sparingly
-Hand-drawn marks, emojis, stickers, and large icons can add personality, but only when they genuinely add to the ad — not as decoration for its own sake.
+Hand-drawn marks, emojis, stickers, and large icons can add personality, but only when they earn their place.
 - **1–2 elements max** per ad. If you're considering a third, remove one instead.
-- Each element must earn its place. Ask: does this make the ad better, or just busier?
+- **Hand-drawn arrows or underlines** in Deep Purple: use to connect two elements, point to a CTA, or add energy. One per ad.
+- **Feature label pills:** Pill-shaped UI elements with Spectrum gradient stroke and sparkle icon (✦) — use for AI/smart features only.
+- **Large icon:** 1 max — purple shapes (arrows, lightning, plus) for emphasis only, never decoration.
 - Never let decorative elements compete with the headline or logo.
-- When unsure, leave them out. A clean ad beats a cluttered one every time.
-- ✅ One well-placed sticker · A single large icon for emphasis · An emoji inline with copy
-- ❌ Multiple stickers · Hand-drawn marks + emojis + icons together · Decoration that distracts
+- ✅ One well-placed sticker · A single large icon · A hand-drawn arrow connecting two elements
+- ❌ Multiple stickers + hand-drawn marks + icons all at once · Decoration for its own sake
+
+---
 
 ### Legibility
 - Every element must be readable at the intended size and distance.
-- Text over photography always gets the warm overlay treatment (R210 G205 B200) or sufficient contrast.
+- Text over photography always gets the warm overlay treatment (R210 G205 B200) or a sufficient contrast zone.
 - Never place light text on a light background or dark text on a dark background without sufficient contrast.
 - Check the logo reads clearly at small sizes — if it doesn't, it's too small.
+
+---
 
 ### What to Avoid
 - Overcrowded layouts — if it feels busy, remove something
 - Long body copy — ads are not the place for explanation
 - All-caps Plus Jakarta Sans (unless explicitly requested)
 - More than 2 secondary brand colors in one ad
-- Gradients as full-background fills
+- Gradients as full-background fills (exception: Spectrum gradient for AI ads)
 - Multiple competing focal points
+- CTAs in the main ad creative — the CTA lives in the platform ad format (button, caption), not the image itself
+- Subheadlines unless genuinely necessary to complete the message
 
 ---
 
