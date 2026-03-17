@@ -476,59 +476,24 @@ For marketing assets, the **Small Simplified Product Elements** section is usual
 
 ## STATS, AWARDS & SOCIAL PROOF
 
-### ⚠️ Always Check the Live Awards & Stats Doc
-The Google Doc below is the source of truth for all approved stats and awards. Always use the WebFetch tool to check it before referencing any stats or awards — the list is updated regularly and the doc overrides anything listed in this file.
+### ⚠️ MANDATORY: Always Fetch the Live Doc First
+**You MUST use the WebFetch tool to fetch the live stats and awards doc every single time before referencing any stat, award, or review.** Do not use cached, remembered, or assumed data. The doc is updated regularly and only the live version is approved for use.
 
-**Awards & Stats source of truth:** https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit?usp=sharing
+**Fetch this URL:**
+```
+https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/export?format=txt
+```
 
-The stats and awards below are a snapshot from January 2026. Always verify against the live doc before use.
+If that URL redirects, follow the redirect and fetch again. The doc is publicly accessible — no sign-in required. Do not proceed with stats or awards until you have successfully fetched and read the live content.
 
-### Approved Stats
-- 150,000+ small businesses use Homebase
-- 3.5M employees logged 1.2 billion hours worked on timesheets in 2025
-- Over $5 billion in small business payroll processed; 7+ million paychecks
-- 252M schedules sent in 2025
-- Nearly 2 million administrative tasks handled by AI Assistants since June
-- 20,000+ businesses actively use AI Assistants; 150,000+ benefit from AI/automation
-- 1+ million employee clock-outs supported by Payroll Assistant since late August
-- Nearly 400,000 shift reassignments facilitated by Scheduling Assistant
-- 20,000+ AI-assisted screener interviews conducted by Hiring Assistant
-- 2026 goal: help save 100 million hours with AI and automation
-
-### Awards & Recognition
-
-**Payroll**
-- Best Small Business Payroll (2025) — U.S. News 360 Reviews
-- Best Payroll for Hourly Teams (2024) — USA Today Blueprint
-- Best Payroll for Small Business (2024) — CNN Underscored (#1 ranking)
-- Best Payroll Services 2026 — Forbes
-- Best Payroll Services for 2025 — PC Mag
-
-**Team App & Scheduling**
-- Best HR & Employee Experience App (2025) — The Webby Awards, People's Voice Winner
-- Capterra Shortlist – Employee Scheduling (2025)
-- Best HR & Employee App (2023) — The Webby Awards
-- Best Time Clock 2023 — The Motley Fool
-- Best Scheduling 2023 — Investopedia
-- Best Employee Scheduling Software (2025) — B2B Reviews
-- Best workforce scheduling software for small businesses — Zendesk
-- Best overall time clock for small business 2025 — Fit Small Business
-- Best for Overall Experience, Best Employee Scheduling — Business.com
-- Best Employee Time Clock Software 2026 — People Managing People
-
-**Corporate**
-- Inc. Best in Business, AI Implementation (2025)
-- Best Workplaces for Innovators, North America (2025) — Fast Company
-- Fast Company's Brands That Matter (2024)
-- Best Startup Employers (2024) — Forbes
-- Best in Business (2020) — Inc.
+**Do not use any stats or awards from memory or from this file.** This file intentionally contains no inline stats or awards data — the live doc is the only source of truth.
 
 ### Usage Guidelines
-- Only use stats and awards from this approved list — do not fabricate or approximate numbers
+- Only use stats and awards retrieved from the live doc — never fabricate or approximate numbers
 - Pick the most relevant stat or award for the context — don't pile them all in
-- For ads and short-form copy, lead with the most striking number (150,000+ businesses, $5B+ payroll processed)
+- For ads and short-form copy, lead with the most striking number (e.g. 150,000+ businesses, $5B+ payroll processed)
 - For award mentions, pair the award name with the awarding body for credibility
-- Stats work best when they're specific and tied to real behavior ("1.2 billion hours tracked") not vague ("lots of businesses use us")
+- Stats work best when specific and tied to real behavior ("1.2 billion hours tracked") not vague ("lots of businesses use us")
 
 ---
 
