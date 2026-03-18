@@ -101,13 +101,18 @@ Gradient rules: Never full-page backgrounds. Accent and element use only. Apply 
 ### ⚠️ Always Use Official Logo Files — NEVER Recreate
 **The homebase logo must NEVER be recreated, redrawn, or simulated in any font or design tool.** This includes setting the word "homebase" in Plus Jakarta Sans, Druk, or any other typeface as a logo substitute. That is not the logo.
 
-Always use the official logo files. The only approved source is:
+Always use the official logo files. The direct public URLs are:
 
-- **Logo assets (official):** https://drive.google.com/drive/folders/1ILhAe_ikJUJOq10pYaB7eRu_kCFYOCXr?usp=sharing
+| Variant | URL |
+|---|---|
+| Purple wordmark (on light) | `https://homebase-brand-guide.vercel.app/brand-assets/03-logo/logotype/purple-wordmark.svg` |
+| White wordmark (on dark) | `https://homebase-brand-guide.vercel.app/brand-assets/03-logo/logotype/white-wordmark.svg` |
+| Purple iconmark (on light) | `https://homebase-brand-guide.vercel.app/brand-assets/03-logo/logomark/purple-iconmark.svg` |
+| White iconmark (on dark) | `https://homebase-brand-guide.vercel.app/brand-assets/03-logo/logomark/white-iconmark.svg` |
 
-This folder contains all approved logo formats (SVG, PNG, dark/light variants). Always download from this link and place the file directly into your design.
+Full asset library (Google Drive): https://drive.google.com/drive/folders/1ILhAe_ikJUJOq10pYaB7eRu_kCFYOCXr?usp=sharing
 
-If you are an AI assistant helping with design work: do not type "homebase" in a font and call it a logo. Fetch or reference the actual file from the link above, or ask the user to provide the downloaded file.
+**If you are an AI assistant:** always use the SVG URLs above when placing the logo in any design. Use the purple wordmark on light backgrounds, white wordmark on dark/purple backgrounds. Never type "homebase" in a font.
 
 ### Brand Asset Downloads
 All official brand assets are stored in Google Drive. Always use files from these folders:
