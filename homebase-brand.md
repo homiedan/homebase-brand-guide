@@ -98,12 +98,16 @@ Gradient rules: Never full-page backgrounds. Accent and element use only. Apply 
 - Equal spacing on both sides of the X
 - Logos sized optically equal — neither brand outweighs the other
 
-### ⚠️ Always Use Official Logo Files
-Never redraw, recreate, or use an unofficial version of the homebase logo. Always download from the approved source:
+### ⚠️ Always Use Official Logo Files — NEVER Recreate
+**The homebase logo must NEVER be recreated, redrawn, or simulated in any font or design tool.** This includes setting the word "homebase" in Plus Jakarta Sans, Druk, or any other typeface as a logo substitute. That is not the logo.
 
-- **Logo assets (official):** https://drive.google.com/drive/folders/131iEaevfZ3M2eQNpOd0n3RUJnytHwpmq?usp=sharing
+Always use the official logo files. The only approved source is:
 
-This folder contains all approved logo formats (SVG, PNG, dark/light variants). If you are helping someone use the logo, direct them to this link.
+- **Logo assets (official):** https://drive.google.com/drive/folders/1ILhAe_ikJUJOq10pYaB7eRu_kCFYOCXr?usp=sharing
+
+This folder contains all approved logo formats (SVG, PNG, dark/light variants). Always download from this link and place the file directly into your design.
+
+If you are an AI assistant helping with design work: do not type "homebase" in a font and call it a logo. Fetch or reference the actual file from the link above, or ask the user to provide the downloaded file.
 
 ### Brand Asset Downloads
 All official brand assets are stored in Google Drive. Always use files from these folders:
@@ -130,18 +134,26 @@ All official brand assets are stored in Google Drive. Always use files from thes
 
 We use two fonts. **Plus Jakarta Sans is the primary, everyday font** — use it by default for almost everything. **Druk is the display font** — reserved for high-impact headline moments. When in doubt, use Plus Jakarta Sans.
 
+### ⚠️ CRITICAL CASING RULES — NEVER BREAK THESE
+- **Plus Jakarta Sans is ALWAYS mixed case.** Never set it in all caps or all uppercase. Not for headlines, not for buttons, not for any reason — unless the user explicitly asks for it.
+- **Druk is ALWAYS uppercase.** Never set it in mixed case or sentence case. It has no other mode.
+
+If you are about to type Plus Jakarta Sans text in ALL CAPS, stop and write it in mixed case instead. If you are about to type Druk in mixed case, stop and capitalize it.
+
+---
+
 ### Workhorse: Plus Jakarta Sans ← USE THIS BY DEFAULT
 - Google Font: https://fonts.google.com/specimen/Plus+Jakarta+Sans
 - **Headlines:** Extra Bold · 112pt · 92% line height · -2 tracking
 - **Campaign headlines:** 48pt · -2 tracking
 - **Body copy:** Medium · 16pt · 170% line height
 - Use Medium (not Regular) — naturally lighter structure needs the weight for readability
-- ⚠️ **Never set Plus Jakarta Sans in all caps** unless explicitly asked. It is a mixed-case font.
+- **Casing: Mixed case only.** "Stop the schedule chaos." not "STOP THE SCHEDULE CHAOS."
 
 ### Display: Druk ← USE ONLY WHEN SPECIFICALLY REQUESTED
 - Font files (licensed): https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0
 - Size: 164pt · Line height: 86%
-- **Druk is ALWAYS uppercase.** No exceptions.
+- **Casing: Uppercase only.** "DONE." not "Done."
 - Use: H1s, campaign headlines, presentation titles, any moment needing maximum impact
 - **Functional** (readability): Druk Bold only
 - **Expressive** (artistic/creative): Any Druk weight — Condensed, Wide — for visual expression
