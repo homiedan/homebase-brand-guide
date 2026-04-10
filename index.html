@@ -136,6 +136,115 @@
     .sb-link.active { color: var(--deep); font-weight: 700; }
     .sb-link.active::after { opacity: 1; transform: translateX(0) rotate(45deg); }
 
+    /* ─── SEARCH ───────────────────────────────────────────────── */
+    .sb-search {
+      position: relative;
+      padding: 4px 16px 16px;
+      border-bottom: 1px solid #E5E5E5;
+      margin-bottom: 4px;
+    }
+
+    .sb-search-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .sb-search-icon {
+      position: absolute;
+      left: 10px;
+      width: 14px;
+      height: 14px;
+      color: rgba(30,11,58,0.35);
+      pointer-events: none;
+      flex-shrink: 0;
+    }
+
+    .sb-search-input {
+      width: 100%;
+      padding: 8px 10px 8px 32px;
+      border: 1px solid #E5E5E5;
+      border-radius: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--deep);
+      background: #FAFAFA;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .sb-search-input::placeholder { color: rgba(30,11,58,0.35); }
+    .sb-search-input:focus { border-color: var(--purple); background: #fff; }
+
+    .sb-search-clear {
+      position: absolute;
+      right: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(30,11,58,0.4);
+      padding: 2px;
+      display: none;
+      line-height: 1;
+      font-size: 16px;
+    }
+    .sb-search-clear.visible { display: block; }
+
+    .sb-search-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(30,11,58,0.14), 0 1px 4px rgba(30,11,58,0.07);
+      overflow: hidden;
+      z-index: 200;
+    }
+    .sb-search-dropdown.open { display: block; }
+
+    .sb-search-result {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      cursor: pointer;
+      border-bottom: 1px solid #F0F0F0;
+      transition: background 0.1s;
+    }
+    .sb-search-result:last-child { border-bottom: none; }
+    .sb-search-result:hover, .sb-search-result.focused { background: rgba(126,61,212,0.06); }
+
+    .sb-result-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 2px;
+    }
+
+    .sb-result-snippet {
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(30,11,58,0.5);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sb-result-snippet mark {
+      background: none;
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .sb-search-empty {
+      padding: 12px 14px;
+      font-size: 12px;
+      color: rgba(30,11,58,0.4);
+    }
+
     /* ─── MAIN ─────────────────────────────────────────────────── */
     main { margin-left: var(--nav-w); flex: 1; min-width: 0; }
 
@@ -1378,6 +1487,18 @@
     <svg class="sb-logo" viewBox="0 0 623.88 97.24" xmlns="http://www.w3.org/2000/svg"><use href="#hb-logo"/></svg>
     <div class="sb-title">Brand Guidelines</div>
   </div>
+  <div class="sb-search">
+    <div class="sb-search-input-wrap">
+      <svg class="sb-search-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="6.5" cy="6.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 10L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <input class="sb-search-input" id="sbSearchInput" type="text" placeholder="Search brand guide…" autocomplete="off" spellcheck="false">
+      <button class="sb-search-clear" id="sbSearchClear" aria-label="Clear search">×</button>
+    </div>
+    <div class="sb-search-dropdown" id="sbSearchDropdown"></div>
+  </div>
+
   <nav>
     <a href="#overview"     class="sb-link">Welcome</a>
     <a href="#principles"   class="sb-link">Principles</a>
@@ -2930,6 +3051,120 @@ if (parent) {
   };
   new ShaderMount(parent, grainGradientFragmentShader, uniforms, undefined, 1.04);
 }
+</script>
+
+<script>
+/* ─── BRAND GUIDE SEARCH ──────────────────────────────────────── */
+(function() {
+  const NAV_LABELS = {
+    overview: 'Welcome', principles: 'Principles', logo: 'Logo',
+    cobranding: 'Cobranding', ai: 'AI Branding', color: 'Color',
+    typography: 'Typography', elements: 'Graphic Elements',
+    backgrounds: 'Backgrounds', product: 'Product',
+    photography: 'Photography', voice: 'Voice & Tone',
+    gallery: 'Gallery', resources: 'Resources'
+  };
+
+  // Build index after page loads
+  const index = [];
+  window.addEventListener('DOMContentLoaded', () => {
+    Object.entries(NAV_LABELS).forEach(([id, label]) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.innerText.replace(/\s+/g, ' ').trim();
+      index.push({ id, label, text });
+    });
+  });
+
+  const input = document.getElementById('sbSearchInput');
+  const dropdown = document.getElementById('sbSearchDropdown');
+  const clearBtn = document.getElementById('sbSearchClear');
+  let focusedIdx = -1;
+
+  function getSnippet(text, query) {
+    const lo = text.toLowerCase();
+    const qi = lo.indexOf(query.toLowerCase());
+    if (qi === -1) return text.slice(0, 60) + '…';
+    const start = Math.max(0, qi - 25);
+    const end = Math.min(text.length, qi + query.length + 40);
+    const pre = start > 0 ? '…' : '';
+    const post = end < text.length ? '…' : '';
+    const raw = text.slice(start, end);
+    const re = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return pre + raw.replace(re, '<mark>$1</mark>') + post;
+  }
+
+  function renderResults(query) {
+    const q = query.trim();
+    dropdown.innerHTML = '';
+    focusedIdx = -1;
+
+    if (!q) {
+      dropdown.classList.remove('open');
+      return;
+    }
+
+    const matches = index.filter(s =>
+      s.label.toLowerCase().includes(q.toLowerCase()) ||
+      s.text.toLowerCase().includes(q.toLowerCase())
+    ).slice(0, 5);
+
+    if (matches.length === 0) {
+      dropdown.innerHTML = `<div class="sb-search-empty">No results for "${q}"</div>`;
+    } else {
+      matches.forEach((m, i) => {
+        const a = document.createElement('a');
+        a.className = 'sb-search-result';
+        a.href = '#' + m.id;
+        a.dataset.idx = i;
+        a.innerHTML = `<div class="sb-result-label">${m.label}</div><div class="sb-result-snippet">${getSnippet(m.text, q)}</div>`;
+        a.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+          input.value = '';
+          clearBtn.classList.remove('visible');
+          dropdown.classList.remove('open');
+          document.getElementById(m.id).scrollIntoView({ behavior: 'smooth' });
+        });
+        dropdown.appendChild(a);
+      });
+    }
+    dropdown.classList.add('open');
+  }
+
+  input.addEventListener('input', () => {
+    clearBtn.classList.toggle('visible', input.value.length > 0);
+    renderResults(input.value);
+  });
+
+  input.addEventListener('keydown', (e) => {
+    const items = dropdown.querySelectorAll('.sb-search-result');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      focusedIdx = Math.min(focusedIdx + 1, items.length - 1);
+      items.forEach((el, i) => el.classList.toggle('focused', i === focusedIdx));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      focusedIdx = Math.max(focusedIdx - 1, 0);
+      items.forEach((el, i) => el.classList.toggle('focused', i === focusedIdx));
+    } else if (e.key === 'Enter' && focusedIdx >= 0) {
+      items[focusedIdx].dispatchEvent(new MouseEvent('mousedown'));
+    } else if (e.key === 'Escape') {
+      dropdown.classList.remove('open');
+      input.blur();
+    }
+  });
+
+  input.addEventListener('blur', () => {
+    setTimeout(() => dropdown.classList.remove('open'), 150);
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.classList.remove('visible');
+    dropdown.classList.remove('open');
+    input.focus();
+  });
+})();
 </script>
 
 </body>
