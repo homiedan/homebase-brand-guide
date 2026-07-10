@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask the Homebase Brand</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'Druk';
+      src: url('Druk-Bold-Web.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:      #7E3DD4;
+      --deep:        #1E0B3A;
+      --white:       #FFFFFF;
+      --grey01:      #FBFBFB;
+      --grey02:      #F6F6F6;
+      --grey03:      #EFEFEF;
+      --grey05:      #AAAAAA;
+      --rain:        #D5C7FF;
+      --rain100:     #E7DFFF;
+      --rain50:      #F3EFFF;
+      --yellow:      #E0FF00;
+      --pink:        #E55CCD;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--grey01);
+      color: var(--deep);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HERO ──────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--deep);
+      color: var(--white);
+      overflow: hidden;
+      padding: 80px 24px 120px;
+      text-align: center;
+    }
+    /* organic blurred colour blobs — grainy-gradient feel */
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 620px; height: 620px;
+      background: var(--purple);
+      top: -220px; left: -120px;
+    }
+    .hero::after {
+      width: 520px; height: 520px;
+      background: var(--pink);
+      bottom: -260px; right: -100px;
+      opacity: 0.30;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rain);
+      background: rgba(213,199,255,0.12);
+      border: 1px solid rgba(213,199,255,0.25);
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    h1.hero-title {
+      font-family: 'Druk', sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      line-height: 0.88;
+      letter-spacing: -0.01em;
+      font-size: clamp(48px, 9vw, 104px);
+      margin-bottom: 22px;
+    }
+    h1.hero-title .accent { color: var(--rain); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.4vw, 20px);
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin: 0 auto 40px;
+    }
+
+    /* ─── SEARCH BAR ────────────────────────────────────────── */
+    .search-wrap {
+      position: relative;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border-radius: 100px;
+      padding: 6px 8px 6px 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .search-icon { flex-shrink: 0; color: var(--purple); display: flex; }
+    #q {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--deep);
+      padding: 16px 0;
+    }
+    #q::placeholder { color: var(--grey05); }
+    .clear-btn {
+      display: none;
+      border: none;
+      background: var(--grey03);
+      color: var(--deep);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+    .clear-btn:hover { background: var(--grey05); color: var(--white); }
+    .clear-btn.show { display: block; }
+
+    /* example chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .chip {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 9px 16px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .chip:hover { background: rgba(255,255,255,0.18); color: #fff; }
+
+    /* ─── RESULTS ───────────────────────────────────────────── */
+    .results-section {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 100px;
+    }
+    .results-meta {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--grey05);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--grey03);
+      border-radius: 20px;
+      padding: 26px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(30,11,58,0.04);
+      transition: box-shadow 0.18s, transform 0.18s, border-color 0.18s;
+      animation: rise 0.28s ease both;
+    }
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(30,11,58,0.10);
+      transform: translateY(-2px);
+      border-color: var(--rain);
+    }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--purple);
+      background: var(--rain50);
+      padding: 5px 11px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .card .answer {
+      font-size: 15.5px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: #4a3d5e;
+    }
+    .card .answer strong { color: var(--deep); font-weight: 700; }
+    .card .answer ul { margin: 8px 0 0 18px; }
+    .card .answer li { margin-bottom: 4px; }
+    .card .answer code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: var(--grey02);
+      padding: 2px 6px;
+      border-radius: 5px;
+      color: var(--purple);
+    }
+
+    /* colour swatches inside answers */
+    .swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .swatch {
+      display: flex; align-items: center; gap: 9px;
+      background: var(--grey01);
+      border: 1px solid var(--grey03);
+      border-radius: 10px;
+      padding: 7px 12px 7px 8px;
+      font-size: 13px; font-weight: 600;
+    }
+    .swatch .dot {
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .swatch .hex {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--grey05); font-weight: 500; font-size: 12px;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--purple);
+      text-decoration: none;
+    }
+    .card-link:hover { text-decoration: underline; }
+    .card-link .arrow { transition: transform 0.15s; }
+    .card:hover .card-link .arrow { transform: translateX(3px); }
+
+    /* empty / no-results states */
+    .empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--grey05);
+    }
+    .empty h3 { font-size: 20px; font-weight: 800; color: var(--deep); margin-bottom: 8px; }
+    .empty p { font-size: 15px; font-weight: 500; line-height: 1.6; max-width: 420px; margin: 0 auto; }
+
+    /* browse-all hint shown before searching */
+    .browse-title {
+      font-family: 'Druk', sans-serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: 0.01em;
+      margin: 4px 0 20px;
+      color: var(--deep);
+    }
+    .browse-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .browse-cat {
+      display: block;
+      text-align: left;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--deep);
+      background: var(--white);
+      border: 1px solid var(--grey03);
+      border-radius: 14px;
+      padding: 18px 16px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .browse-cat:hover { border-color: var(--purple); background: var(--rain50); color: var(--purple); transform: translateY(-2px); }
+    .browse-cat .count { display: block; font-size: 12px; font-weight: 600; color: var(--grey05); margin-top: 4px; }
+
+    /* ─── FOOTER ────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 40px 24px 60px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--grey05);
+    }
+    footer a { color: var(--purple); font-weight: 700; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .hero { padding: 56px 18px 90px; }
+      .results-section { padding: 40px 18px 80px; }
+      .card { padding: 22px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── HERO ───────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Homebase Brand · 2026</span>
+      <h1 class="hero-title">Ask the <span class="accent">brand</span></h1>
+      <p class="hero-sub">Type any brand question — colors, logo, fonts, voice, photography — and we'll point you to the answer.</p>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <input id="q" type="text" autocomplete="off" spellcheck="false" placeholder="e.g. What purple do we use?" aria-label="Ask a brand question" />
+          <button class="clear-btn" id="clear" aria-label="Clear">✕</button>
+        </div>
+
+        <div class="chips" id="chips">
+          <button class="chip">What's our purple?</button>
+          <button class="chip">Can I use yellow as a background?</button>
+          <button class="chip">Which font for headlines?</button>
+          <button class="chip">How should we sound?</button>
+          <button class="chip">Where are the logo files?</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── RESULTS ────────────────────────────────────────── -->
+  <main class="results-section">
+    <div class="results-meta" id="meta"></div>
+    <div id="results"></div>
+  </main>
+
+  <footer>
+    Built from the <a href="index.html">Homebase Brand Guidelines 2026</a>. A proof of concept — answers link back to the live guide.
+  </footer>
+
+  <script>
+  /* ────────────────────────────────────────────────────────────
+     BRAND KNOWLEDGE BASE
+     Each entry is one answerable topic. `link` deep-links to the
+     matching section in the existing brand guide (index.html).
+     ──────────────────────────────────────────────────────────── */
+  const KB = [
+    {
+      cat: "Color",
+      title: "What purple do we use?",
+      keywords: "purple haze primary brand color anchor main hex 7E3DD4 deep purple colour",
+      link: "index.html#color",
+      answer: `<strong>Purple Haze</strong> — <code>#7E3DD4</code> — is our brand anchor. It must be present in <strong>every</strong> composition, no exceptions. <strong>Deep Purple</strong> (<code>#1E0B3A</code>) handles depth and dark backgrounds.`,
+      swatches: [
+        { name: "Purple Haze", hex: "#7E3DD4" },
+        { name: "Deep Purple", hex: "#1E0B3A" }
+      ]
+    },
+    {
+      cat: "Color",
+      title: "What are the secondary / accent colors?",
+      keywords: "secondary accent colors yellowcard yellow pink floyd purple rain lavender palette swatch",
+      link: "index.html#color",
+      answer: `Accents only — <strong>never</strong> used as full backgrounds. Max <strong>2 secondary colors</strong> in any single composition.`,
+      swatches: [
+        { name: "Purple Rain", hex: "#D5C7FF" },
+        { name: "Yellowcard", hex: "#E0FF00" },
+        { name: "Pink Floyd", hex: "#E55CCD" },
+        { name: "Grey 01", hex: "#FBFBFB" }
+      ]
+    },
+    {
+      cat: "Color",
+      title: "Can I use yellow (or pink) as a background?",
+      keywords: "yellow yellowcard pink floyd background rule allowed can i secondary accent full",
+      link: "index.html#color",
+      answer: `<strong>No.</strong> Yellowcard and Pink Floyd are <strong>accent-only</strong> — never full backgrounds. Approved solid backgrounds are White, Grey 01, Deep Purple, and Purple Haze. And remember: light backgrounds → dark elements; dark backgrounds → light elements.`
+    },
+    {
+      cat: "Color",
+      title: "What are the color rules?",
+      keywords: "color rules how many colors max contrast purple haze always present combinations",
+      link: "index.html#color",
+      answer: `<ul>
+        <li><strong>Purple Haze must always be present.</strong> No exceptions.</li>
+        <li>Max <strong>2 secondary colors</strong> per composition.</li>
+        <li>Yellowcard & Pink Floyd are accent-only — never backgrounds.</li>
+        <li>Light backgrounds → dark elements; dark → light.</li>
+        <li>Never place the logo on busy or low-contrast backgrounds.</li>
+      </ul>`
+    },
+    {
+      cat: "Color",
+      title: "What are the color tints?",
+      keywords: "tints shades lighter darker purple rain yellowcard pink floyd greyscale grey 400 300 100 50",
+      link: "index.html#color",
+      answer: `<strong>Purple Rain:</strong> 400 <code>#9A84E6</code> · 300 <code>#B8A6F2</code> · Base <code>#D5C7FF</code> · 100 <code>#E7DFFF</code> · 50 <code>#F3EFFF</code><br>
+      <strong>Yellowcard:</strong> 500 <code>#8FA800</code> · 300 <code>#BBD600</code> · Base <code>#E0FF00</code> · 100 <code>#EFFF79</code> · 50 <code>#F8FFCC</code><br>
+      <strong>Pink Floyd:</strong> 400 <code>#C438A3</code> · 300 <code>#CF44B8</code> · Base <code>#E55CCD</code> · 100 <code>#F2A6E6</code> · 50 <code>#FBE6F5</code><br>
+      <strong>Greyscale:</strong> 02 <code>#F6F6F6</code> · 03 <code>#EFEFEF</code> · 04 <code>#E7E7E7</code> · 05 <code>#AAAAAA</code>`
+    },
+    {
+      cat: "Color",
+      title: "What are the print / CMYK / Pantone values?",
+      keywords: "print cmyk pantone pms rgb color values physical spot",
+      link: "index.html#color",
+      answer: `<strong>Purple Haze</strong> — PMS 2597C · CMYK 54·76·0·2 · RGB 126·61·212<br>
+      <strong>Deep Purple</strong> — PMS 273C · CMYK 98·97·0·37 · RGB 30·11·58<br>
+      <strong>Purple Rain</strong> — PMS 2645C · CMYK 16·24·0·0 · RGB 213·199·255<br>
+      <strong>Yellowcard</strong> — PMS 387C · CMYK 13·0·100·0 · RGB 224·255·0<br>
+      <strong>Pink Floyd</strong> — PMS 806C · CMYK 5·58·0·10 · RGB 229·92·205`
+    },
+    {
+      cat: "Color",
+      title: "What gradients can I use?",
+      keywords: "gradient gradients spectrum purple light purple to white ai rules direction",
+      link: "index.html#color",
+      answer: `<ul>
+        <li><strong>Spectrum</strong> (Deep Purple → Purple Haze → Pink Floyd → Yellowcard) — <strong>AI branding ONLY</strong>.</li>
+        <li><strong>Purple</strong> (Deep Purple → Purple Haze → Purple Rain) — general use.</li>
+        <li><strong>Light Purple</strong> (Purple Haze → Purple Rain) — general use.</li>
+        <li><strong>Purple to White</strong> — general use.</li>
+      </ul>
+      Never as full-page backgrounds. Accent and element use only, applied sparingly.`
+    },
+    {
+      cat: "Logo",
+      title: "How do I use the logo correctly?",
+      keywords: "logo logotype wordmark usage lowercase homebase combos approved never rules",
+      link: "index.html#logo",
+      answer: `The logotype is <strong>always lowercase</strong>: <code>homebase</code>. Approved combos: Purple Haze on light · White on Purple Haze · Purple Haze on Deep Purple · White on Deep Purple.<br><br>
+      <strong>Never:</strong> outline · stroke · drop shadow · rotate · skew · capitalize · recolor · place on busy backgrounds.`
+    },
+    {
+      cat: "Logo",
+      title: "When do I use the h iconmark?",
+      keywords: "logomark iconmark h icon app small spaces mark secondary",
+      link: "index.html#logo",
+      answer: `The <strong>h iconmark</strong> is the secondary mark — for <strong>small spaces and app icons only</strong>. Never pair it with the logotype. Approved combos: Purple Haze on light · White on Purple Haze.`
+    },
+    {
+      cat: "Logo",
+      title: "Where are the logo files?",
+      keywords: "logo files download svg assets links google drive wordmark iconmark where find",
+      link: "index.html#resources",
+      answer: `Always use the <strong>official SVG files</strong> — never recreate the logo in a font. Direct links:
+      <ul>
+        <li>Purple wordmark (light bg) · White wordmark (dark bg)</li>
+        <li>Purple iconmark (light bg) · White iconmark (dark bg)</li>
+      </ul>
+      Full library lives in Google Drive — see the <strong>Resources</strong> section of the guide.`
+    },
+    {
+      cat: "Logo",
+      title: "Can I retype 'homebase' in a font?",
+      keywords: "recreate logo redraw retype font substitute never plus jakarta druk fake",
+      link: "index.html#logo",
+      answer: `<strong>Never.</strong> The logo must never be recreated, redrawn, or set in Plus Jakarta, Druk, or any typeface as a substitute. Typing the word "homebase" in a font is <strong>not the logo</strong>. Always use the official SVG files.`
+    },
+    {
+      cat: "Logo",
+      title: "How does cobranding / partner lockups work?",
+      keywords: "cobranding partner lockup logos together x separator clover equal spacing",
+      link: "index.html#cobranding",
+      answer: `Separate the homebase logo and partner logo with an <strong>"X"</strong>, with equal spacing on both sides. Size the logos <strong>optically equal</strong> — neither brand should outweigh the other.`
+    },
+    {
+      cat: "Typography",
+      title: "Which font do I use for headlines?",
+      keywords: "font headlines display druk plus jakarta which typeface title impact heading",
+      link: "index.html#typography",
+      answer: `<strong>Plus Jakarta Sans is the default for almost everything</strong>, including most headlines (Extra Bold). Use <strong>Druk</strong> only for high-impact display moments — campaign titles, big H1s. When in doubt, Plus Jakarta Sans.`
+    },
+    {
+      cat: "Typography",
+      title: "Tell me about Plus Jakarta Sans",
+      keywords: "plus jakarta sans workhorse body font default medium weight size specs",
+      link: "index.html#typography",
+      answer: `Our workhorse — use it by default. <strong>Headlines:</strong> Extra Bold, 112pt, 92% line height, -2 tracking. <strong>Body:</strong> Medium, 16pt, 170% line height (use Medium, not Regular). <strong>Always mixed case</strong> — never all caps.`
+    },
+    {
+      cat: "Typography",
+      title: "Tell me about Druk",
+      keywords: "druk display headline uppercase condensed wide expressive functional impact specs",
+      link: "index.html#typography",
+      answer: `Display font for maximum-impact moments only. <strong>Always uppercase</strong> — it has no other mode. 164pt, 86% line height. Use <strong>Druk Bold</strong> for functional/readable headlines; Condensed & Wide are <strong>expressive only</strong>, never for readable text.`
+    },
+    {
+      cat: "Typography",
+      title: "What are the casing rules?",
+      keywords: "casing uppercase lowercase all caps mixed case rules druk plus jakarta capital",
+      link: "index.html#typography",
+      answer: `<ul>
+        <li><strong>Plus Jakarta Sans is ALWAYS mixed case</strong> — never all caps (unless explicitly requested).</li>
+        <li><strong>Druk is ALWAYS uppercase</strong> — never mixed or sentence case.</li>
+      </ul>
+      "Stop the schedule chaos." not "STOP THE SCHEDULE CHAOS." · "DONE." not "Done."`
+    },
+    {
+      cat: "Voice",
+      title: "How should we sound? What's our voice?",
+      keywords: "voice tone sound personality neighborly clear proactive qualities writing copy how",
+      link: "index.html#voice",
+      answer: `Three qualities, always on:
+      <ul>
+        <li><strong>Neighborly</strong> — helpful, relatable, accessible. Write like you talk, no jargon.</li>
+        <li><strong>Clear</strong> — straightforward, direct. Lead with what matters, keep it short.</li>
+        <li><strong>Proactive</strong> — confident, ready, reliable. Show don't tell; energy with purpose.</li>
+      </ul>`
+    },
+    {
+      cat: "Voice",
+      title: "How does tone change by channel?",
+      keywords: "tone channel mix percentage paid social website product education organic support",
+      link: "index.html#voice",
+      answer: `Tone shifts by context (Neighborly / Clear / Proactive):
+      <ul>
+        <li><strong>First interactions</strong> (paid, OOH): 55 / 90 / 50</li>
+        <li><strong>Consideration</strong> (website, app store): 40 / 85 / 65</li>
+        <li><strong>Product education</strong>: 60 / 80 / 100</li>
+        <li><strong>Organic social</strong>: 90 / 40 / 25</li>
+        <li><strong>Support</strong> (difficult news): 25 / 65 / 50</li>
+      </ul>`
+    },
+    {
+      cat: "Photography",
+      title: "What's our photography direction?",
+      keywords: "photography photos images direction real people candid natural light shot types avoid",
+      link: "index.html#photography",
+      answer: `Real small business owners, employees, and teams — natural, candid, warm. Shot types: <strong>People · Products · Spaces · Compositions</strong>. Natural light, light retouching only, never posed. <strong>Avoid:</strong> stock-photo feel, formal poses, heavy editing. When placing type over photos, use a warm overlay at <code>RGB 210·205·200</code>.`
+    },
+    {
+      cat: "Elements",
+      title: "How do I use graphic elements & icons?",
+      keywords: "graphic elements large icons arrows lightning plus quote hand drawn marks stickers emojis how many",
+      link: "index.html#elements",
+      answer: `<ul>
+        <li><strong>Large icons</strong> (arrows, lightning, plus, quotes): 1–2 max per layout, always upright, never rotated.</li>
+        <li><strong>Hand-drawn marks:</strong> small, intentional moments only — never the primary visual.</li>
+        <li><strong>Stickers:</strong> 1–2 max, short phrases (3–6 words), complement — never replace — messaging.</li>
+        <li><strong>Emojis:</strong> supporting only, used sparingly.</li>
+      </ul>`
+    },
+    {
+      cat: "AI",
+      title: "How do we brand AI features?",
+      keywords: "ai artificial intelligence sparkle sparkles icon spectrum gradient feature badge branding",
+      link: "index.html#ai",
+      answer: `Use the <strong>Sparkles icon (✦)</strong> to distinguish AI-powered features (as a badge or inline). The <strong>Spectrum gradient</strong> (Deep Purple → Purple Haze → Pink Floyd → Yellowcard) is <strong>exclusively</strong> for AI contexts — never use it anywhere else.`
+    },
+    {
+      cat: "Backgrounds",
+      title: "What backgrounds are approved?",
+      keywords: "backgrounds solid gradient noise grain texture grainy approved treatments",
+      link: "index.html#backgrounds",
+      answer: `Approved: solid <strong>White, Grey 01, Deep Purple, Purple Haze</strong>; subtle Purple-family gradients; photography with warm overlay for text. A subtle <strong>noise/grain</strong> layer keeps backgrounds tangible — if you can clearly see the grain, it's too much. Spectrum gradient: AI contexts only, never full-page.`
+    },
+    {
+      cat: "Backgrounds",
+      title: "How do I make a grainy gradient background?",
+      keywords: "grainy gradient textured blurred shapes blobs shader animated paper design noise",
+      link: "index.html#backgrounds",
+      answer: `Start with large, soft blurred shapes in brand colors (typically Deep Purple, Purple Haze, Purple Rain), then apply a grain texture over the whole composition so it reads as one cohesive surface. For <strong>animated</strong> versions, use Paper Design's Grain Gradient shader — keep motion slow and subtle.`
+    },
+    {
+      cat: "Motion",
+      title: "What are the motion & animation rules?",
+      keywords: "motion animation timing easing ui product hand drawn draw on natural principles",
+      link: "index.html",
+      answer: `Guiding principle: <strong>natural, not noticed.</strong> UI motion should feel physical — ease-in-out curves, small elements 150–200ms, larger 250–350ms, no bounce or overshoot. Hand-drawn elements use a <strong>draw-on stroke reveal</strong>, one at a time, at a real-pen rhythm. Never animate to decorate — animate to communicate.`
+    },
+    {
+      cat: "Principles",
+      title: "What are the creative principles?",
+      keywords: "creative principles human approachable bold crafted values four qualities",
+      link: "index.html#principles",
+      answer: `Every piece of brand work reflects four qualities:
+      <ul>
+        <li><strong>Human</strong> — real people, real moments.</li>
+        <li><strong>Approachable</strong> — warmth, simplicity, no barriers.</li>
+        <li><strong>Bold</strong> — confident ideas without sacrificing clarity.</li>
+        <li><strong>Crafted</strong> — every detail intentional.</li>
+      </ul>`
+    },
+    {
+      cat: "Principles",
+      title: "Who is Homebase? What's the brand promise?",
+      keywords: "who is homebase brand promise mission everyday heroes small business hourly what do",
+      link: "index.html#overview",
+      answer: `<strong>Brand promise:</strong> "To make hourly work easier for every small business." Homebase is an all-in-one app for hourly teams — scheduling, time tracking, payroll, and hiring. The people we serve are real small business owners, managers, and employees — the everyday heroes keeping local businesses running.`
+    },
+    {
+      cat: "Ads",
+      title: "How do I design an ad?",
+      keywords: "ad ads design paid social display ooh headline clean simple visual directions bold type",
+      link: "index.html#gallery",
+      answer: `<strong>Clean and simple</strong> — one idea, one visual, one message. Lead with a single visual direction (don't combine): <strong>Bold Type</strong>, <strong>Product UI</strong>, <strong>Photography</strong>, or <strong>People + UI</strong>. Always include a big dominant headline; no subhead by default. 1–2 decorative elements max.`
+    },
+    {
+      cat: "Social",
+      title: "How does organic social work?",
+      keywords: "organic social carousel customer spotlight instagram slides celebrate story year in review rewind",
+      link: "index.html#gallery",
+      answer: `The customer is the hero — we celebrate, not sell. Primary format is the <strong>6-slide Customer Spotlight Carousel</strong> (1080×1350). No hard sells, no CTAs in the creative, never stock photography, and only <strong>one logo</strong> per carousel (on the closer slide).`
+    },
+    {
+      cat: "Quotes",
+      title: "Can I use a customer quote or testimonial?",
+      keywords: "customer quotes testimonials approval permission use reviews clearance legal",
+      link: "index.html#resources",
+      answer: `<strong>Approval required first.</strong> Before using any quote or customer name publicly, verify permission has been granted for that specific use. Don't assume approval — check with the marketing/brand team. Treat every quote as "pending approval" until confirmed.`
+    },
+    {
+      cat: "Stats",
+      title: "How do I use stats & awards?",
+      keywords: "stats awards social proof numbers metrics live doc source truth fetch credibility",
+      link: "index.html#resources",
+      answer: `<strong>Always pull from the live stats & awards doc</strong> — never use remembered or approximate numbers. Pick the single most relevant stat for the context (don't pile them on), and pair awards with the awarding body for credibility. Stats work best when specific and tied to real behavior.`
+    },
+    {
+      cat: "Product",
+      title: "Where are the product UI screens?",
+      keywords: "product app ui screens figma brandbase design system export mobile desktop mockup",
+      link: "index.html#product",
+      answer: `All product UI screens live in the <strong>Brandbase — Brand Design System</strong> Figma file (Full Scale Desktop, Full Scale Mobile, and Small Simplified Product Elements). For marketing assets, start with the <strong>Small Simplified Product Elements</strong> — already cropped and sized. Export at 2× or 3× for retina.`
+    }
+  ];
+
+  /* ── Search engine (simple weighted token match) ─────────── */
+  const norm = s => s.toLowerCase().replace(/[^a-z0-9\s]/g, " ");
+  const STOP = new Set(["the","a","an","is","are","do","i","we","our","to","of","for","and","in","on","how","what","which","can","should","use","using","with","when","where","my","me","us"]);
+
+  function score(entry, tokens) {
+    const hayTitle = norm(entry.title);
+    const hayKw = norm(entry.keywords + " " + entry.cat);
+    const hayBody = norm(entry.answer);
+    let s = 0;
+    for (const t of tokens) {
+      if (hayTitle.includes(t)) s += 6;
+      if (hayKw.includes(t)) s += 4;
+      if (hayBody.includes(t)) s += 1;
+    }
+    return s;
+  }
+
+  function search(query) {
+    const tokens = norm(query).split(/\s+/).filter(t => t.length > 1 && !STOP.has(t));
+    if (!tokens.length) return [];
+    return KB
+      .map(e => ({ e, s: score(e, tokens) }))
+      .filter(x => x.s > 0)
+      .sort((a, b) => b.s - a.s)
+      .map(x => x.e);
+  }
+
+  /* ── Rendering ───────────────────────────────────────────── */
+  const resultsEl = document.getElementById("results");
+  const metaEl = document.getElementById("meta");
+  const input = document.getElementById("q");
+  const clearBtn = document.getElementById("clear");
+
+  function cardHTML(e) {
+    let sw = "";
+    if (e.swatches) {
+      sw = `<div class="swatches">` + e.swatches.map(s =>
+        `<span class="swatch"><span class="dot" style="background:${s.hex}"></span>${s.name}<span class="hex">${s.hex}</span></span>`
+      ).join("") + `</div>`;
+    }
+    return `<div class="card">
+      <span class="tag">${e.cat}</span>
+      <h3>${e.title}</h3>
+      <div class="answer">${e.answer}${sw}</div>
+      <a class="card-link" href="${e.link}">Open in the brand guide <span class="arrow">→</span></a>
+    </div>`;
+  }
+
+  function renderResults(list, query) {
+    if (!list.length) {
+      metaEl.textContent = "";
+      resultsEl.innerHTML = `<div class="empty">
+        <h3>No direct match — yet</h3>
+        <p>Try simpler words like <em>color</em>, <em>logo</em>, <em>font</em>, <em>voice</em>, or <em>photography</em> — or browse the full <a href="index.html">brand guide</a>.</p>
+      </div>`;
+      return;
+    }
+    metaEl.textContent = `${list.length} answer${list.length > 1 ? "s" : ""} for "${query}"`;
+    resultsEl.innerHTML = list.map(cardHTML).join("");
+  }
+
+  function renderBrowse() {
+    metaEl.textContent = "";
+    const cats = {};
+    KB.forEach(e => { cats[e.cat] = (cats[e.cat] || 0) + 1; });
+    const grid = Object.keys(cats).map(c =>
+      `<button class="browse-cat" data-cat="${c}">${c}<span class="count">${cats[c]} answer${cats[c] > 1 ? "s" : ""}</span></button>`
+    ).join("");
+    resultsEl.innerHTML = `<div class="browse-title">Or browse by topic</div><div class="browse-grid">${grid}</div>`;
+    resultsEl.querySelectorAll(".browse-cat").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const cat = btn.dataset.cat;
+        input.value = cat;
+        clearBtn.classList.add("show");
+        const list = KB.filter(e => e.cat === cat);
+        renderResults(list, cat);
+        window.scrollTo({ top: document.querySelector(".results-section").offsetTop - 20, behavior: "smooth" });
+      });
+    });
+  }
+
+  function handleInput() {
+    const q = input.value.trim();
+    clearBtn.classList.toggle("show", q.length > 0);
+    if (!q) { renderBrowse(); return; }
+    renderResults(search(q), q);
+  }
+
+  input.addEventListener("input", handleInput);
+  clearBtn.addEventListener("click", () => { input.value = ""; handleInput(); input.focus(); });
+
+  document.querySelectorAll(".chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      input.value = chip.textContent;
+      handleInput();
+      window.scrollTo({ top: document.querySelector(".results-section").offsetTop - 20, behavior: "smooth" });
+    });
+  });
+
+  // initial state
+  renderBrowse();
+  input.focus();
+  </script>
+</body>
+</html>
