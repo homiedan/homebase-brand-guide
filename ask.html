@@ -338,6 +338,11 @@
     footer a { color: var(--purple); font-weight: 700; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* custom face cursor on anything clickable */
+    a, button, .chip, .browse-cat, .clear-btn, .hero-logo {
+      cursor: url('links/face-cursor.svg') 16 14, pointer;
+    }
+
     @media (max-width: 560px) {
       .hero { padding: 56px 18px 90px; }
       .results-section { padding: 40px 18px 80px; }
