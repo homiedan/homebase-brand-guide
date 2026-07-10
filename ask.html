@@ -241,6 +241,7 @@
       color: #4a3d5e;
     }
     .card .answer strong { color: var(--deep); font-weight: 700; }
+    .card .answer a { color: var(--purple); font-weight: 700; text-decoration: underline; }
     .card .answer ul { margin: 8px 0 0 18px; }
     .card .answer li { margin-bottom: 4px; }
     .card .answer code {
@@ -605,9 +606,10 @@
     {
       cat: "Backgrounds",
       title: "How do I make a grainy gradient background?",
-      keywords: "grainy gradient textured blurred shapes blobs shader animated paper design noise",
+      keywords: "grainy gradient textured blurred shapes blobs shader animated paper design noise settings",
       link: "index.html#backgrounds",
-      answer: `Start with large, soft blurred shapes in brand colors (typically Deep Purple, Purple Haze, Purple Rain), then apply a grain texture over the whole composition so it reads as one cohesive surface. For <strong>animated</strong> versions, use Paper Design's Grain Gradient shader — keep motion slow and subtle.`
+      answer: `Start with large, soft blurred shapes in brand colors (typically Deep Purple, Purple Haze, Purple Rain), then apply a grain texture over the whole composition so it reads as one cohesive surface.<br><br>
+      For <strong>animated</strong> versions, use <a href="https://shaders.paper.design/grain-gradient" target="_blank" rel="noopener">Paper Design's Grain Gradient shader</a>. Brand-aligned starting point: colors <code>7E3DD4</code> + <code>D5C7FF</code>, colorBack <code>1E0B3A</code>, softness 0.5, intensity 0.5, noise 0.25, speed 1, shape corners/organic. Keep it slow — it should drift and breathe, never pulse or flash.`
     },
     {
       cat: "Motion",
@@ -652,17 +654,21 @@
     },
     {
       cat: "Quotes",
-      title: "Can I use a customer quote or testimonial?",
-      keywords: "customer quotes testimonials approval permission use reviews clearance legal",
-      link: "index.html#resources",
-      answer: `<strong>Approval required first.</strong> Before using any quote or customer name publicly, verify permission has been granted for that specific use. Don't assume approval — check with the marketing/brand team. Treat every quote as "pending approval" until confirmed.`
+      title: "Where do I find customer quotes & testimonials?",
+      keywords: "customer quotes testimonials approval permission use reviews clearance legal list find where source",
+      link: "https://docs.google.com/spreadsheets/d/17p2bh8uQ59NShKvCgFbAJpq0S7inEF3yHngH1CHxE1I/edit?usp=sharing",
+      linkLabel: "Open the customer quote list",
+      answer: `The full, up-to-date list of customer quotes lives in the <a href="https://docs.google.com/spreadsheets/d/17p2bh8uQ59NShKvCgFbAJpq0S7inEF3yHngH1CHxE1I/edit?usp=sharing" target="_blank" rel="noopener">master customer quotes sheet</a> — that's the source of truth.<br><br>
+      <strong>⚠️ Approval required first.</strong> Before using any quote or customer name publicly, verify permission has been granted for that specific use. Don't assume approval — check with the marketing/brand team. Treat every quote as "pending approval" until confirmed.`
     },
     {
       cat: "Stats",
-      title: "How do I use stats & awards?",
-      keywords: "stats awards social proof numbers metrics live doc source truth fetch credibility",
-      link: "index.html#resources",
-      answer: `<strong>Always pull from the live stats & awards doc</strong> — never use remembered or approximate numbers. Pick the single most relevant stat for the context (don't pile them on), and pair awards with the awarding body for credibility. Stats work best when specific and tied to real behavior.`
+      title: "Where do I find stats & awards? (and how to use them)",
+      keywords: "stats awards social proof numbers metrics live doc source truth fetch credibility find where businesses payroll",
+      link: "https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit",
+      linkLabel: "Open the live stats & awards doc",
+      answer: `All current stats, awards, and reviews live in the <a href="https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit" target="_blank" rel="noopener">live stats &amp; awards doc</a> — <strong>always pull the latest from there</strong>, never from memory or approximation (the numbers change).<br><br>
+      Pick the single most relevant stat for the context (don't pile them on), and pair awards with the awarding body for credibility. Stats work best when specific and tied to real behavior.`
     },
     {
       cat: "Product",
@@ -670,6 +676,115 @@
       keywords: "product app ui screens figma brandbase design system export mobile desktop mockup",
       link: "index.html#product",
       answer: `All product UI screens live in the <strong>Brandbase — Brand Design System</strong> Figma file (Full Scale Desktop, Full Scale Mobile, and Small Simplified Product Elements). For marketing assets, start with the <strong>Small Simplified Product Elements</strong> — already cropped and sized. Export at 2× or 3× for retina.`
+    },
+    {
+      cat: "Spacing",
+      title: "What's the spacing system / 8px grid?",
+      keywords: "spacing 8px grid padding margins gaps sizing increments proportion system base unit multiples",
+      link: "index.html",
+      answer: `Everything is built on an <strong>8px grid</strong>. Base unit 8px; common increments <strong>8 · 16 · 24 · 32 · 40 · 48 · 64 · 80 · 96 · 112 · 128px</strong>. Apply to margins, gutters, gaps, and padding. Never use arbitrary values like 10, 15, or 22px — always round to the nearest multiple of 8.`
+    },
+    {
+      cat: "Spacing",
+      title: "What are the safe zones / margins for an ad?",
+      keywords: "safe zone margins edge inset ad canvas protected area 1080 1440 bleed",
+      link: "index.html#gallery",
+      answer: `Every ad has a protected safe zone — a minimum inset on all four edges before content begins:
+      <ul>
+        <li><strong>1080px canvas</strong> → 64–80px margin</li>
+        <li><strong>1440px canvas</strong> → 96–112px margin</li>
+        <li><strong>Any size</strong> → ~6–8% of canvas width, rounded to the nearest 8px</li>
+      </ul>
+      The logo and headline never break outside the safe zone. Stickers and hand-drawn marks may bleed in slightly for energy.`
+    },
+    {
+      cat: "Spacing",
+      title: "How big should headlines be in an ad?",
+      keywords: "headline size sizing big druk type only mixed layout canvas percent proportion dominant",
+      link: "index.html#gallery",
+      answer: `Druk headlines should feel dominant, never timid.
+      <ul>
+        <li><strong>Type-only ads</strong> → headline fills 80–90% of width and 55–70% of height. The type IS the visual.</li>
+        <li><strong>Mixed layouts</strong> (type + photo/UI) → headline takes 45–60% of width, 40–55% of height, and still dominates its side.</li>
+      </ul>
+      Keep at least ~8% of canvas width of clear space around the headline.`
+    },
+    {
+      cat: "Spacing",
+      title: "What's the spacing for web pages?",
+      keywords: "web page spacing joinhomebase gutter section padding column gap max width website layout",
+      link: "index.html",
+      answer: `Web layouts follow the same 8px grid:
+      <ul>
+        <li><strong>Page gutter</strong> (left/right margin): 120px</li>
+        <li><strong>Section vertical padding</strong>: 80–96px</li>
+        <li><strong>Column gaps</strong>: 24–32px</li>
+        <li><strong>Component padding</strong>: 16–32px</li>
+        <li><strong>Max canvas width</strong>: 1440px</li>
+      </ul>`
+    },
+    {
+      cat: "Logo",
+      title: "How big should the logo be, and where does it go?",
+      keywords: "logo size sizing placement position how big canvas percent ad top left bottom safe zone width",
+      link: "index.html#logo",
+      answer: `The logo scales with the canvas — never a fixed size. Target width <strong>~24% of canvas width</strong> (range 20–28%), always inside the safe zone.
+      <ul>
+        <li><strong>Light backgrounds</strong> → Purple Haze wordmark, bottom-left or bottom-center.</li>
+        <li><strong>Dark / purple backgrounds</strong> → White wordmark, bottom-left (or top-left for photography ads).</li>
+      </ul>
+      If the headline feels crowded, the logo is too big — it signals, never competes.`
+    },
+    {
+      cat: "Typography",
+      title: "Where do I get the fonts?",
+      keywords: "font files download druk dropbox plus jakarta sans google fonts install where get typeface",
+      link: "https://fonts.google.com/specimen/Plus+Jakarta+Sans",
+      linkLabel: "Get Plus Jakarta Sans",
+      answer: `<strong>Plus Jakarta Sans</strong> — free on <a href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" target="_blank" rel="noopener">Google Fonts</a>.<br>
+      <strong>Druk</strong> is licensed — get the official files from the <a href="https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0" target="_blank" rel="noopener">Druk Dropbox folder</a>. (Druk isn't available in Figma — use Plus Jakarta Sans ExtraBold as the stand-in there.)`
+    },
+    {
+      cat: "Resources",
+      title: "Where do I download brand assets?",
+      keywords: "download assets files google drive logo graphic elements icons hand drawn photo library where get svg png folder resources",
+      link: "https://drive.google.com/drive/folders/1ILhAe_ikJUJOq10pYaB7eRu_kCFYOCXr?usp=sharing",
+      linkLabel: "Open the full asset library",
+      answer: `All official assets live in Google Drive. Jump to a folder:
+      <ul>
+        <li><a href="https://drive.google.com/drive/folders/131iEaevfZ3M2eQNpOd0n3RUJnytHwpmq?usp=sharing" target="_blank" rel="noopener">Logo assets</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1mdD0C_AN9u9DRYT9rnNgJCTojoGfhZEL?usp=sharing" target="_blank" rel="noopener">Graphic element assets</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1Ic6hsS3V-R7qcryasb2O5Bl8XflUi_10?usp=sharing" target="_blank" rel="noopener">Large icon assets</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1xHxNyRPJQ6VPSFwvSHjXdD-osmHOP927?usp=sharing" target="_blank" rel="noopener">Hand-drawn element assets</a></li>
+        <li><a href="https://drive.google.com/drive/folders/1mvLViRjmsI-WP8FsulOrNTS7MgiP6MMN?usp=sharing" target="_blank" rel="noopener">Photo library</a></li>
+      </ul>`
+    },
+    {
+      cat: "Ads",
+      title: "What are the ad headline rules?",
+      keywords: "ad headline rules subhead druk plus jakarta stacked list punchline done type color dominant",
+      link: "index.html#gallery",
+      answer: `<strong>Always one big, dominant headline. No subhead by default.</strong> Druk (uppercase) for maximum impact; Plus Jakarta Sans (mixed case) for softer, conversational headlines.<br><br>
+      <strong>Stacked list + punchline</strong> is a signature pattern: stack the problem in muted type, then land the payoff in Purple Haze — e.g. HOURS / WAGES / TAXES / PAYROLL → <strong>DONE.</strong> The color shift signals the solution.`
+    },
+    {
+      cat: "Ads",
+      title: "How do I show a promo or offer in an ad?",
+      keywords: "promo offer discount deal stamp seal badge sticker 3 months free circular rotating text",
+      link: "index.html#gallery",
+      answer: `Use a <strong>circular stamp / seal sticker</strong> — it should feel like a real-world stamp.
+      <ul>
+        <li><strong>Dark bg ads</strong> → Purple Haze circle + Yellowcard text.</li>
+        <li><strong>Light bg ads</strong> → Yellowcard circle + Deep Purple text.</li>
+      </ul>
+      One offer sticker max, placed off-center (often top-left or overlapping a focal element). Never make the offer the full-frame visual.`
+    },
+    {
+      cat: "Ads",
+      title: "How do I design an award or social-proof ad?",
+      keywords: "award social proof credential ad best rated laurel wreath deep purple attribution recognition",
+      link: "index.html#gallery",
+      answer: `<strong>Background:</strong> Deep Purple. <strong>The award statement IS the headline</strong> — Druk, large, Purple Haze. The award category can appear in Yellowcard in a secondary expressive style. Attribute the source in small light text with an em dash (e.g. "2024 — CNN Underscored"), flanked by a <strong>Yellowcard laurel wreath</strong>. No photography or product UI in award-only ads.`
     }
   ];
 
@@ -717,7 +832,7 @@
       <span class="tag">${e.cat}</span>
       <h3>${e.title}</h3>
       <div class="answer">${e.answer}${sw}</div>
-      <a class="card-link" href="${e.link}">Open in the brand guide <span class="arrow">→</span></a>
+      <a class="card-link" href="${e.link}"${/^https?:/.test(e.link) ? ' target="_blank" rel="noopener"' : ''}>${e.linkLabel || "Open in the brand guide"} <span class="arrow">→</span></a>
     </div>`;
   }
 
