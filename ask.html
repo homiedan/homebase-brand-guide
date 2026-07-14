@@ -330,9 +330,37 @@
     footer a:hover { text-decoration: underline; }
 
     /* custom face cursor on anything clickable */
-    a, button, .chip, .browse-cat, .clear-btn, .hero-logo {
+    a, button, .chip, .browse-cat, .clear-btn, .hero-logo, .copyable {
       cursor: url('links/face-cursor.svg') 16 14, pointer;
     }
+
+    /* click-to-copy hex codes */
+    .copyable { transition: background 0.15s, border-color 0.15s, color 0.15s; }
+    .swatch.copyable:hover { border-color: var(--purple); background: var(--rain50); }
+    .answer code.copyable:hover { background: var(--rain100); color: var(--deep); }
+
+    #copyToast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%) translateY(20px);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--deep);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 100px;
+      box-shadow: 0 10px 30px rgba(30,11,58,0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s, transform 0.18s;
+      z-index: 1000;
+    }
+    #copyToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    #copyToast .dot { width: 16px; height: 16px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.3); }
 
     @media (max-width: 560px) {
       .hero { padding: 56px 18px 90px; }
@@ -382,6 +410,8 @@
   <footer>
     Built from the <a href="index.html">Homebase Brand Guidelines 2026</a>. A proof of concept — answers link back to the live guide.
   </footer>
+
+  <div id="copyToast" aria-live="polite"></div>
 
   <script>
   /* ────────────────────────────────────────────────────────────
@@ -833,6 +863,49 @@
   const input = document.getElementById("q");
   const clearBtn = document.getElementById("clear");
 
+  /* ── Click-to-copy hex codes ─────────────────────────────── */
+  const HEX_RE = /^#?([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$/;
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.focus(); ta.select();
+      try { document.execCommand("copy"); resolve(); } catch (err) { reject(err); }
+      document.body.removeChild(ta);
+    });
+  }
+
+  let toastTimer;
+  function showCopyToast(hex) {
+    const t = document.getElementById("copyToast");
+    t.innerHTML = `<span class="dot" style="background:${hex}"></span>Copied ${hex}`;
+    t.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+
+  // Tag swatches and inline hex <code> as copyable after each render
+  function enhanceCopyable(root) {
+    root.querySelectorAll(".swatch").forEach(el => {
+      const hexEl = el.querySelector(".hex");
+      if (hexEl) { el.classList.add("copyable"); el.dataset.copy = hexEl.textContent.trim(); el.title = "Click to copy"; }
+    });
+    root.querySelectorAll(".answer code").forEach(el => {
+      const m = el.textContent.trim().match(HEX_RE);
+      if (m) { el.classList.add("copyable"); el.dataset.copy = "#" + m[1]; el.title = "Click to copy"; }
+    });
+  }
+
+  // One delegated handler for all copyable hex codes
+  resultsEl.addEventListener("click", e => {
+    const el = e.target.closest(".copyable");
+    if (!el || !el.dataset.copy) return;
+    const hex = el.dataset.copy.toUpperCase();
+    copyText(hex).then(() => showCopyToast(hex)).catch(() => {});
+  });
+
   function cardHTML(e) {
     let sw = "";
     if (e.swatches) {
@@ -863,6 +936,7 @@
     }
     metaEl.textContent = `${list.length} answer${list.length > 1 ? "s" : ""} for "${query}"`;
     resultsEl.innerHTML = list.map(cardHTML).join("");
+    enhanceCopyable(resultsEl);
   }
 
   function renderBrowse() {
