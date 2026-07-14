@@ -259,11 +259,16 @@
       color: var(--grey05); font-weight: 500; font-size: 12px;
     }
 
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      margin-top: 18px;
+    }
     .card-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 18px;
       font-size: 14px;
       font-weight: 700;
       color: var(--purple);
@@ -271,7 +276,7 @@
     }
     .card-link:hover { text-decoration: underline; }
     .card-link .arrow { transition: transform 0.15s; }
-    .card:hover .card-link .arrow { transform: translateX(3px); }
+    .card-link:hover .arrow { transform: translateX(3px); }
 
     /* empty / no-results states */
     .empty {
@@ -488,7 +493,8 @@
         <li>Purple wordmark (light bg) · White wordmark (dark bg)</li>
         <li>Purple iconmark (light bg) · White iconmark (dark bg)</li>
       </ul>
-      Full library lives in Google Drive — see the <strong>Resources</strong> section of the guide.`
+      Full library lives in Google Drive — see the <strong>Resources</strong> section of the guide.`,
+      extraLinks: [{ href: "https://drive.google.com/drive/folders/131iEaevfZ3M2eQNpOd0n3RUJnytHwpmq?usp=sharing", label: "Open logo files in Drive" }]
     },
     {
       cat: "Logo",
@@ -567,7 +573,8 @@
       title: "What's our photography direction?",
       keywords: "photography photos images direction real people candid natural light shot types avoid",
       link: "index.html#photography",
-      answer: `Real small business owners, employees, and teams — natural, candid, warm. Shot types: <strong>People · Products · Spaces · Compositions</strong>. Natural light, light retouching only, never posed. <strong>Avoid:</strong> stock-photo feel, formal poses, heavy editing. When placing type over photos, use a warm overlay at <code>RGB 210·205·200</code>.`
+      answer: `Real small business owners, employees, and teams — natural, candid, warm. Shot types: <strong>People · Products · Spaces · Compositions</strong>. Natural light, light retouching only, never posed. <strong>Avoid:</strong> stock-photo feel, formal poses, heavy editing. When placing type over photos, use a warm overlay at <code>RGB 210·205·200</code>.`,
+      extraLinks: [{ href: "https://drive.google.com/drive/folders/1mvLViRjmsI-WP8FsulOrNTS7MgiP6MMN?usp=sharing", label: "Open the photo library in Drive" }]
     },
     {
       cat: "Elements",
@@ -579,7 +586,12 @@
         <li><strong>Hand-drawn marks:</strong> small, intentional moments only — never the primary visual.</li>
         <li><strong>Stickers:</strong> 1–2 max, short phrases (3–6 words), complement — never replace — messaging.</li>
         <li><strong>Emojis:</strong> supporting only, used sparingly.</li>
-      </ul>`
+      </ul>`,
+      extraLinks: [
+        { href: "https://drive.google.com/drive/folders/1mdD0C_AN9u9DRYT9rnNgJCTojoGfhZEL?usp=sharing", label: "Graphic elements in Drive" },
+        { href: "https://drive.google.com/drive/folders/1Ic6hsS3V-R7qcryasb2O5Bl8XflUi_10?usp=sharing", label: "Large icons in Drive" },
+        { href: "https://drive.google.com/drive/folders/1xHxNyRPJQ6VPSFwvSHjXdD-osmHOP927?usp=sharing", label: "Hand-drawn marks in Drive" }
+      ]
     },
     {
       cat: "AI",
@@ -601,7 +613,8 @@
       keywords: "grainy gradient textured blurred shapes blobs shader animated paper design noise settings",
       link: "index.html#backgrounds",
       answer: `Start with large, soft blurred shapes in brand colors (typically Deep Purple, Purple Haze, Purple Rain), then apply a grain texture over the whole composition so it reads as one cohesive surface.<br><br>
-      For <strong>animated</strong> versions, use <a href="https://shaders.paper.design/grain-gradient" target="_blank" rel="noopener">Paper Design's Grain Gradient shader</a>. Brand-aligned starting point: colors <code>7E3DD4</code> + <code>D5C7FF</code>, colorBack <code>1E0B3A</code>, softness 0.5, intensity 0.5, noise 0.25, speed 1, shape corners/organic. Keep it slow — it should drift and breathe, never pulse or flash.`
+      For <strong>animated</strong> versions, use <a href="https://shaders.paper.design/grain-gradient" target="_blank" rel="noopener">Paper Design's Grain Gradient shader</a>. Brand-aligned starting point: colors <code>7E3DD4</code> + <code>D5C7FF</code>, colorBack <code>1E0B3A</code>, softness 0.5, intensity 0.5, noise 0.25, speed 1, shape corners/organic. Keep it slow — it should drift and breathe, never pulse or flash.`,
+      extraLinks: [{ href: "https://shaders.paper.design/grain-gradient", label: "Open the grain gradient shader tool" }]
     },
     {
       cat: "Motion",
@@ -648,26 +661,29 @@
       cat: "Quotes",
       title: "Where do I find customer quotes & testimonials?",
       keywords: "customer quotes testimonials approval permission use reviews clearance legal list find where source",
-      link: "https://docs.google.com/spreadsheets/d/17p2bh8uQ59NShKvCgFbAJpq0S7inEF3yHngH1CHxE1I/edit?usp=sharing",
-      linkLabel: "Open the customer quote list",
+      link: "index.html#resources",
+      linkLabel: "Open in the brand guide",
       answer: `The full, up-to-date list of customer quotes lives in the <a href="https://docs.google.com/spreadsheets/d/17p2bh8uQ59NShKvCgFbAJpq0S7inEF3yHngH1CHxE1I/edit?usp=sharing" target="_blank" rel="noopener">master customer quotes sheet</a> — that's the source of truth.<br><br>
-      <strong>⚠️ Approval required first.</strong> Before using any quote or customer name publicly, verify permission has been granted for that specific use. Don't assume approval — check with the marketing/brand team. Treat every quote as "pending approval" until confirmed.`
+      <strong>⚠️ Approval required first.</strong> Before using any quote or customer name publicly, verify permission has been granted for that specific use. Don't assume approval — check with the marketing/brand team. Treat every quote as "pending approval" until confirmed.`,
+      extraLinks: [{ href: "https://docs.google.com/spreadsheets/d/17p2bh8uQ59NShKvCgFbAJpq0S7inEF3yHngH1CHxE1I/edit?usp=sharing", label: "Open the customer quote list" }]
     },
     {
       cat: "Stats",
       title: "Where do I find stats & awards? (and how to use them)",
       keywords: "stats awards social proof numbers metrics live doc source truth fetch credibility find where businesses payroll",
-      link: "https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit",
-      linkLabel: "Open the live stats & awards doc",
+      link: "index.html#resources",
+      linkLabel: "Open in the brand guide",
       answer: `All current stats, awards, and reviews live in the <a href="https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit" target="_blank" rel="noopener">live stats &amp; awards doc</a> — <strong>always pull the latest from there</strong>, never from memory or approximation (the numbers change).<br><br>
-      Pick the single most relevant stat for the context (don't pile them on), and pair awards with the awarding body for credibility. Stats work best when specific and tied to real behavior.`
+      Pick the single most relevant stat for the context (don't pile them on), and pair awards with the awarding body for credibility. Stats work best when specific and tied to real behavior.`,
+      extraLinks: [{ href: "https://docs.google.com/document/d/1cUhfsa-PNGkzD5zyjNbDUWn3AEXKcaOVl9SOlTN5trA/edit", label: "Open the live stats & awards doc" }]
     },
     {
       cat: "Product",
       title: "Where are the product UI screens?",
       keywords: "product app ui screens figma brandbase design system export mobile desktop mockup",
       link: "index.html#product",
-      answer: `All product UI screens live in the <strong>Brandbase — Brand Design System</strong> Figma file (Full Scale Desktop, Full Scale Mobile, and Small Simplified Product Elements). For marketing assets, start with the <strong>Small Simplified Product Elements</strong> — already cropped and sized. Export at 2× or 3× for retina.`
+      answer: `All product UI screens live in the <strong>Brandbase — Brand Design System</strong> Figma file (Full Scale Desktop, Full Scale Mobile, and Small Simplified Product Elements). For marketing assets, start with the <strong>Small Simplified Product Elements</strong> — already cropped and sized. Export at 2× or 3× for retina.`,
+      extraLinks: [{ href: "https://www.figma.com/design/T42eNS4jKEbz7H3KwVepq5/Brandbase--Brand-Design-System", label: "Open product screens in Figma" }]
     },
     {
       cat: "Spacing",
@@ -731,10 +747,14 @@
       cat: "Typography",
       title: "Where do I get the fonts?",
       keywords: "font files download druk dropbox plus jakarta sans google fonts install where get typeface",
-      link: "https://fonts.google.com/specimen/Plus+Jakarta+Sans",
-      linkLabel: "Get Plus Jakarta Sans",
+      link: "index.html#typography",
+      linkLabel: "Open in the brand guide",
       answer: `<strong>Plus Jakarta Sans</strong> — free on <a href="https://fonts.google.com/specimen/Plus+Jakarta+Sans" target="_blank" rel="noopener">Google Fonts</a>.<br>
-      <strong>Druk</strong> is licensed — get the official files from the <a href="https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0" target="_blank" rel="noopener">Druk Dropbox folder</a>. (Druk isn't available in Figma — use Plus Jakarta Sans ExtraBold as the stand-in there.)`
+      <strong>Druk</strong> is licensed — get the official files from the <a href="https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0" target="_blank" rel="noopener">Druk Dropbox folder</a>. (Druk isn't available in Figma — use Plus Jakarta Sans ExtraBold as the stand-in there.)`,
+      extraLinks: [
+        { href: "https://fonts.google.com/specimen/Plus+Jakarta+Sans", label: "Get Plus Jakarta Sans" },
+        { href: "https://www.dropbox.com/scl/fo/ee55p7t3vnmm2rrp7w7hk/h?rlkey=6tkemehc88seq3kx0cy3rhsbn&st=2a661lhj&dl=0", label: "Get Druk (Dropbox)" }
+      ]
     },
     {
       cat: "Resources",
@@ -820,11 +840,15 @@
         `<span class="swatch"><span class="dot" style="background:${s.hex}"></span>${s.name}<span class="hex">${s.hex}</span></span>`
       ).join("") + `</div>`;
     }
+    const mkLink = (href, label) =>
+      `<a class="card-link" href="${href}"${/^https?:/.test(href) ? ' target="_blank" rel="noopener"' : ''}>${label} <span class="arrow">→</span></a>`;
+    let links = mkLink(e.link, e.linkLabel || "Open in the brand guide");
+    if (e.extraLinks) links += e.extraLinks.map(l => mkLink(l.href, l.label)).join("");
     return `<div class="card">
       <span class="tag">${e.cat}</span>
       <h3>${e.title}</h3>
       <div class="answer">${e.answer}${sw}</div>
-      <a class="card-link" href="${e.link}"${/^https?:/.test(e.link) ? ' target="_blank" rel="noopener"' : ''}>${e.linkLabel || "Open in the brand guide"} <span class="arrow">→</span></a>
+      <div class="card-links">${links}</div>
     </div>`;
   }
 
